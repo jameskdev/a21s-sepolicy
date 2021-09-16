@@ -1,0 +1,14 @@
+# vendor_init.te
+
+get_prop(vendor_init, vendor_radio_prop)
+set_prop(vendor_init, vendor_df_prop)
+set_prop(vendor_init, vendor_rmnet_prop)
+set_prop(vendor_init, vendor_teegris_prop)
+set_prop(vendor_init, vendor_wda_prop)
+
+allow vendor_init cgroup:file rw_file_perms;
+allow vendor_init debugfs_trace_marker:file getattr;
+allow vendor_init proc_swappiness:file rw_file_perms;
+allow vendor_init swap_block_device:blk_file setattr;
+allow vendor_init tmpfs:dir create_dir_perms;
+allow vendor_init tmpfs:lnk_file create;

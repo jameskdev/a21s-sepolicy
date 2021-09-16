@@ -1,0 +1,3 @@
+# cameraserver.te
+
+binder_call(cameraserver, hal_face_default)

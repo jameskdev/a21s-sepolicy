@@ -1,0 +1,40 @@
+# tzdaemon.te
+
+type tzdaemon, domain, netdomain;
+type tzdaemon_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tzdaemon)
+
+tzdaemon_use(tzdaemon)
+
+get_prop(tzdaemon, debug_level_prop)
+get_prop(tzdaemon, product_ship_prop)
+set_prop(tzdaemon, tzdaemon_prop)
+set_prop(tzdaemon, vendor_secureos_prop)
+set_prop(tzdaemon, vendor_tzdaemon_prop)
+set_prop(tzdaemon, vendor_tztsdaemon_prop)
+
+allow tzdaemon domain:dir r_dir_perms;
+allow tzdaemon domain:file r_file_perms;
+allow tzdaemon domain:lnk_file r_file_perms;
+allow tzdaemon efs_file:dir r_dir_perms;
+allow tzdaemon efs_file:file r_file_perms;
+allow tzdaemon kmsg_device:chr_file rw_file_perms;
+allow tzdaemon mnt_vendor_file:dir r_dir_perms;
+allow tzdaemon proc_stat:file r_file_perms;
+allow tzdaemon sec_efs_file:dir r_dir_perms;
+allow tzdaemon sec_efs_file:file r_file_perms;
+allow tzdaemon sec_efs_file:lnk_file r_file_perms;
+allow tzdaemon self:capability ipc_lock;
+allow tzdaemon system_data_file:dir getattr;
+allow tzdaemon tee_data_file:dir create_dir_perms;
+allow tzdaemon tee_data_file:file { create_file_perms link };
+allow tzdaemon tee_efs_file:dir { ioctl read write create getattr setattr lock link rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow tzdaemon tee_efs_file:file { ioctl read write create getattr setattr lock append map unlink link rename open watch watch_reads };
+allow tzdaemon tee_vendor_data_file:dir create_dir_perms;
+allow tzdaemon tee_vendor_data_file:file create_file_perms;
+allow tzdaemon tz_device:chr_file rw_file_perms;
+allow tzdaemon tz_socket:sock_file write;
+allow tzdaemon vaultkeeperd:dir search;
+allow tzdaemon vaultkeeperd:file { read open };
+allow tzdaemon vendor_shell_exec:file rx_file_perms;

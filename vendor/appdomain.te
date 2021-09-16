@@ -1,0 +1,26 @@
+# appdomain.te
+
+get_prop(appdomain, apm_prop)
+get_prop(appdomain, audio_prop)
+get_prop(appdomain, sec_bluetooth_prop)
+get_prop(appdomain, vendor_default_prop)
+get_prop(appdomain, vendor_eden_prop)
+
+allow appdomain asec_apk_file:dir r_dir_perms;
+allow appdomain asec_apk_file:file r_file_perms;
+allow appdomain asec_public_file:dir r_dir_perms;
+allow appdomain asec_public_file:file r_file_perms;
+allow appdomain astc_device:chr_file r_file_perms;
+allow appdomain dualdard_socket:sock_file write;
+allow appdomain knox_dar_shared_device:chr_file { ioctl read write open };
+allow appdomain m2m1shot_device:chr_file rw_file_perms;
+allow appdomain omr_file:file read;
+allow appdomain qrandom_device:chr_file r_file_perms;
+allow appdomain same_process_hal_file:file { getattr map execute execute_no_trans };
+allow appdomain sdcardd:fd use;
+allow appdomain sec_debugfs:dir search;
+allow appdomain sysfs_zram:dir search;
+allow appdomain system_data_file:dir { read open };
+allow appdomain system_data_file:file open;
+allow appdomain users_system_data_file:file { read write getattr };
+allow appdomain zygote:unix_stream_socket { getattr getopt };

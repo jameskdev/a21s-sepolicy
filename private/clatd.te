@@ -1,0 +1,3 @@
+# clatd.te
+
+allow clatd xlat_access_sysnode:file rw_file_perms;

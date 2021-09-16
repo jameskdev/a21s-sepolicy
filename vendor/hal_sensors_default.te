@@ -1,0 +1,57 @@
+# hal_sensors_default.te
+
+wakelock_use(hal_sensors_default)
+
+set_prop(hal_sensors_default, sns_camera_light_prop)
+
+allow hal_sensors_default hal_sensors_default_exec:file { read getattr map execute open entrypoint };
+
+allow hal_sensors_default akmd_vendor_data_file:dir create_dir_perms;
+allow hal_sensors_default akmd_vendor_data_file:file create_file_perms;
+allow hal_sensors_default app_efs_file:dir rw_dir_perms;
+allow hal_sensors_default app_efs_file:file create_file_perms;
+allow hal_sensors_default efs_file:dir r_dir_perms;
+allow hal_sensors_default efs_file:file r_file_perms;
+allow hal_sensors_default fwk_scheduler_hwservice:hwservice_manager find;
+allow hal_sensors_default hal_graphics_allocator_default:fd use;
+allow hal_sensors_default hrm_device:chr_file r_file_perms;
+allow hal_sensors_default iio_device:chr_file r_file_perms;
+allow hal_sensors_default input_device:chr_file r_file_perms;
+allow hal_sensors_default input_device:dir r_dir_perms;
+allow hal_sensors_default io_device:chr_file r_file_perms;
+allow hal_sensors_default ion_device:chr_file r_file_perms;
+allow hal_sensors_default mnt_vendor_file:dir create_dir_perms;
+allow hal_sensors_default mnt_vendor_file:file create_file_perms;
+allow hal_sensors_default persist_file:dir search;
+allow hal_sensors_default range_sensor_device:chr_file rw_file_perms;
+allow hal_sensors_default sec_debugfs:dir r_dir_perms;
+allow hal_sensors_default sec_debugfs:file r_file_perms;
+allow hal_sensors_default sec_debugfs:lnk_file r_file_perms;
+allow hal_sensors_default sec_efs_file:dir r_dir_perms;
+allow hal_sensors_default sec_poc_file:dir r_dir_perms;
+allow hal_sensors_default sec_poc_file:file r_file_perms;;
+allow hal_sensors_default self:global_capability_class_set { sys_admin sys_resource };
+allow hal_sensors_default shub_device:chr_file rw_file_perms;
+allow hal_sensors_default spu_file:file r_file_perms;
+allow hal_sensors_default ssp_device:chr_file rw_file_perms;
+allow hal_sensors_default sysfs:dir r_dir_perms;
+allow hal_sensors_default sysfs:file rw_file_perms;
+allow hal_sensors_default sysfs_lcd_writable:dir r_dir_perms;
+allow hal_sensors_default sysfs_lcd_writable:file r_file_perms;
+allow hal_sensors_default sysfs_sec:file rw_file_perms;
+allow hal_sensors_default sysfs_sensor_writable:dir r_dir_perms;
+allow hal_sensors_default sysfs_sensor_writable:file rw_file_perms;
+allow hal_sensors_default sysfs_ski_sensor_writable:dir r_dir_perms;
+allow hal_sensors_default sysfs_ski_sensor_writable:file rw_file_perms;
+allow hal_sensors_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_sensors_default sysfs_ss_writable:file r_file_perms;
+allow hal_sensors_default sysfs_type:dir r_dir_perms;
+allow hal_sensors_default sysfs_type:file r_file_perms;
+allow hal_sensors_default sysfs_type:lnk_file r_file_perms;
+allow hal_sensors_default system_server:binder call;
+allow hal_sensors_default system_server:fd use;
+allow hal_sensors_default vendor_nanohub_device:chr_file rw_file_perms;
+allow hal_sensors_default vendor_sensorhub_data_file:dir create_dir_perms;
+allow hal_sensors_default vendor_sensorhub_data_file:file create_file_perms;
+allow hal_sensors_default yas_lib_vendor_data_file:dir create_dir_perms;
+allow hal_sensors_default yas_lib_vendor_data_file:file create_file_perms;

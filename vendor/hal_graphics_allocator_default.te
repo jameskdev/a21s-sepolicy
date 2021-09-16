@@ -1,0 +1,10 @@
+# hal_graphics_allocator_default.te
+
+get_prop(hal_graphics_allocator_default, vendor_debug_egl_prop)
+
+allow hal_graphics_allocator_default dumpstate:fd use;
+allow hal_graphics_allocator_default hal_graphics_allocator_default_exec:file { read getattr map execute open entrypoint };
+allow hal_graphics_allocator_default hal_graphics_allocator_default_tmpfs:file { read write getattr map };
+allow hal_graphics_allocator_default sec_debugfs:dir r_dir_perms;
+allow hal_graphics_allocator_default sec_debugfs:file r_file_perms;
+allow hal_graphics_allocator_default sec_debugfs:lnk_file r_file_perms;

@@ -1,0 +1,10 @@
+# system_app.te
+
+binder_call(system_app, hal_camera_default)
+
+tzdaemon_use(system_app)
+
+allow system_app proc_pagetypeinfo:file r_file_perms;
+allow system_app proc_vmallocinfo:file r_file_perms;
+allow system_app sysfs_zram:dir r_dir_perms;
+allow system_app sysfs_zram:file r_file_perms;

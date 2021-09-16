@@ -1,0 +1,2 @@
+dontaudit cbd self:capability dac_override;
+dontaudit cbd self:capability dac_read_search;

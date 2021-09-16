@@ -1,0 +1,3 @@
+# mediadrmserver.te
+
+tzdaemon_use(mediadrmserver)

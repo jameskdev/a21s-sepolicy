@@ -1,0 +1,68 @@
+# platform_app.te
+
+get_prop(platform_app, ap_serial_prop)
+get_prop(platform_app, ccm_prop)
+get_prop(platform_app, exported_audio_prop)
+get_prop(platform_app, sec_audio_prop)
+get_prop(platform_app, sec_camera_prop)
+get_prop(platform_app, vendor_sec_camera_prop)
+
+binder_call(platform_app, hal_camera_default)
+binder_call(platform_app, hal_vendor_configstore_default)
+
+allow platform_app hal_vendor_configstore_hwservice:hwservice_manager find;
+
+allow platform_app carrier_file:dir r_dir_perms;
+allow platform_app carrier_file:file r_file_perms;
+allow platform_app sysfs_android_usb:dir r_dir_perms;
+allow platform_app sysfs_android_usb:file r_file_perms;
+allow platform_app sysfs_app_writable:file rw_file_perms;
+allow platform_app sysfs:dir r_dir_perms;
+allow platform_app sysfs_battery:dir r_dir_perms;
+allow platform_app sysfs_battery:file rw_file_perms;
+allow platform_app sysfs_batteryinfo:dir search;
+allow platform_app sysfs_camera_writable:file rw_file_perms;
+allow platform_app sysfs_gpu:dir r_dir_perms;
+allow platform_app sysfs_gpu:file r_file_perms;
+allow platform_app sysfs_gpu:lnk_file r_file_perms;
+allow platform_app sysfs_key_dump:file r_file_perms;
+allow platform_app sysfs_lcd_writable:dir r_dir_perms;
+allow platform_app sysfs_lcd_writable:file r_file_perms;
+allow platform_app sysfs_lcd_writable:lnk_file r_file_perms;
+allow platform_app sysfs_lowmemorykiller:file r_file_perms;
+allow platform_app sysfs_mmc_host:dir r_dir_perms;
+allow platform_app sysfs_mmc_host:lnk_file r_file_perms;
+allow platform_app sysfs_mst_writable:dir r_dir_perms;
+allow platform_app sysfs_mst_writable:file rw_file_perms;
+allow platform_app sysfs_net:dir r_dir_perms;
+allow platform_app sysfs_net:file r_file_perms;
+allow platform_app sysfs_net:lnk_file r_file_perms;
+allow platform_app sysfs_power:dir r_dir_perms;
+allow platform_app sysfs_power:file r_file_perms;
+allow platform_app sysfs_power:lnk_file r_file_perms;
+allow platform_app sysfs_scsi_host:file rw_file_perms;
+allow platform_app sysfs_sec:dir r_dir_perms;
+allow platform_app sysfs_sec:file rw_file_perms;
+allow platform_app sysfs_sec:lnk_file rw_file_perms;
+allow platform_app sysfs_sensor_writable:file r_file_perms;
+allow platform_app sysfs_ski_storage_readable:dir r_dir_perms;
+allow platform_app sysfs_ski_storage_readable:file r_file_perms;
+allow platform_app sysfs_ski_storage_readable:lnk_file r_file_perms;
+allow platform_app sysfs_ski_touch_writable:dir r_dir_perms;
+allow platform_app sysfs_ski_touch_writable:file rw_file_perms;
+allow platform_app sysfs_ski_ufs_writable:dir r_dir_perms;
+allow platform_app sysfs_ski_ufs_writable:file r_file_perms;
+allow platform_app sysfs_ski_ufs_writable:lnk_file r_file_perms;
+allow platform_app sysfs_ski_usb_readable:file r_file_perms;
+allow platform_app sysfs_ss_writable:dir r_dir_perms;
+allow platform_app sysfs_ss_writable:file r_file_perms;
+allow platform_app sysfs_ss_writable:lnk_file r_file_perms;
+allow platform_app sysfs_svc:dir r_dir_perms;
+allow platform_app sysfs_svc:file r_file_perms;
+allow platform_app sysfs_svc:lnk_file r_file_perms;
+allow platform_app sysfs_switch:dir r_dir_perms;
+allow platform_app sysfs_switch:file r_file_perms;
+allow platform_app sysfs_switch:lnk_file r_file_perms;
+allow platform_app sysfs_thermal:dir r_dir_perms;
+allow platform_app sysfs_thermal:file r_file_perms;
+allow platform_app sysfs_thermal:lnk_file r_file_perms;

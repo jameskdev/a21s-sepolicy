@@ -1,0 +1,4 @@
+# property_contexts
+
+# fastcharge
+persist.vendor.sec.fastchg_enabled     u:object_r:vendor_fastcharge_prop:s0

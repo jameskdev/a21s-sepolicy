@@ -1,0 +1,5 @@
+# mediaprovider_app.te
+
+allow mediaprovider_app omr_access_node:dir r_dir_perms;
+allow mediaprovider_app omr_access_node:file r_file_perms;
+allow mediaprovider_app omr_access_node:lnk_file r_file_perms;

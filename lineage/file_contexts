@@ -1,0 +1,6 @@
+# file_contexts
+
+# LineageOS Specific Parts
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@[0-9]\.[0-9]-service\.samsung                    u:object_r:hal_lineage_fastcharge_default_exec:s0
+
+/data/vendor/display(/.*)?                                                                                  u:object_r:display_vendor_data_file:s0

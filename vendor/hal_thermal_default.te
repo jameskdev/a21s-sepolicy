@@ -1,0 +1,23 @@
+# hal_thermal_default.te
+
+wakelock_use(hal_thermal_default)
+
+allow hal_thermal_default hal_thermal_default_exec:file { read getattr map execute open entrypoint };
+
+allow hal_thermal_default fwk_camera_hwservice:hwservice_manager find;
+allow hal_thermal_default proc_stat:file r_file_perms;
+allow hal_thermal_default proc_stat:file { read getattr open };
+allow hal_thermal_default rild:unix_stream_socket connectto;
+allow hal_thermal_default sysfs:dir search;
+allow hal_thermal_default sysfs:file r_file_perms;
+allow hal_thermal_default sysfs_battery:dir r_dir_perms;
+allow hal_thermal_default sysfs_battery:file r_file_perms;
+allow hal_thermal_default sysfs_battery:lnk_file r_file_perms;
+allow hal_thermal_default sysfs_power:dir r_dir_perms;
+allow hal_thermal_default sysfs_power:file r_file_perms;
+allow hal_thermal_default sysfs_power:lnk_file r_file_perms;
+allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
+allow hal_thermal_default sysfs_thermal:file r_file_perms;
+allow hal_thermal_default sysfs_type:dir r_dir_perms;
+allow hal_thermal_default sysfs_type:file r_file_perms;
+allow hal_thermal_default sysfs_type:lnk_file r_file_perms;

@@ -1,0 +1,3 @@
+# bluetooth.te
+
+binder_call(bluetooth, vaultkeeperd)

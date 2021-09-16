@@ -1,0 +1,15 @@
+# hal_light_default.te
+
+get_prop(hal_light_default, system_product_prop)
+
+allow hal_light_default hal_light_default_exec:file { read getattr map execute open entrypoint };
+allow hal_light_default sysfs:file rw_file_perms;
+allow hal_light_default sysfs_leds:file rw_file_perms;
+allow hal_light_default sysfs_lcd_writable:file rw_file_perms;
+allow hal_light_default sysfs_lcd_writable:dir r_dir_perms;
+allow hal_light_default sysfs_sec:file rw_file_perms;
+allow hal_light_default sysfs_ski_display_writable:file rw_file_perms;
+allow hal_light_default sysfs_ski_display_writable:dir r_dir_perms;
+allow hal_light_default sysfs_ski_led_writable:file rw_file_perms;
+allow hal_light_default sysfs_ss_writable:file rw_file_perms;
+allow hal_light_default system_app:fifo_file write;

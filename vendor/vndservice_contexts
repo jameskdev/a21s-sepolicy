@@ -1,0 +1,18 @@
+# vndservice_contexts
+
+# Engineering mode
+EngineeringModeService                        u:object_r:EngineeringMode_vndservice:s0
+
+# Exynos HWComposer
+Exynos.HWCService                             u:object_r:vendor_surfaceflinger_vndservice:s0
+
+# Remosaicd
+android.samsung.IRemosaicDaemon               u:object_r:remosaicd_vndservice:s0
+android.IRemosaicDaemon                       u:object_r:remosaicd_vndservice:s0
+
+# Samsung Audio
+SccHalAudioContext                            u:object_r:SccHalAudio_service:s0
+SccHalSoundTriggerContext                     u:object_r:SccHalAudio_service:s0
+
+# Wlan
+WlanDutService                                u:object_r:wlandutservice_vndservice:s0

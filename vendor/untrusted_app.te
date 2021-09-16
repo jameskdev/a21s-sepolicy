@@ -1,0 +1,24 @@
+# untrusted_app.te
+
+get_prop(untrusted_app, adbd_prop)
+get_prop(untrusted_app, ap_serial_prop)
+get_prop(untrusted_app, apexd_prop)
+
+allow untrusted_app asec_apk_file:dir r_dir_perms;
+allow untrusted_app asec_apk_file:file rx_file_perms;
+allow untrusted_app carrier_file:dir r_dir_perms;
+allow untrusted_app knox_dar_shared_device:chr_file write;
+allow untrusted_app msockets_socket:sock_file rw_file_perms;
+allow untrusted_app omr_file:dir r_dir_perms;
+allow untrusted_app retailmode_efs_file:dir search;
+allow untrusted_app retailmode_efs_file:file { read getattr open };
+allow untrusted_app sec_efs_file:dir search;
+allow untrusted_app sysfs:blk_file getattr;
+allow untrusted_app sysfs:chr_file getattr;
+allow untrusted_app sysfs:dir getattr;
+allow untrusted_app sysfs:fifo_file getattr;
+allow untrusted_app sysfs:file getattr;
+allow untrusted_app sysfs:lnk_file getattr;
+allow untrusted_app sysfs:sock_file getattr;
+allow untrusted_app sysfs_sensor_writable:file r_file_perms;
+allow untrusted_app untrusted_app:icmp_socket create_socket_perms_no_ioctl;

@@ -1,0 +1,15 @@
+# mediacodec.te
+
+hal_client_domain(mediacodec, hal_power);
+binder_call(mediacodec, hal_power_default)
+
+tzdaemon_use(mediacodec)
+
+allow mediacodec hal_power_hwservice:hwservice_manager { find };
+allow mediacodec sysfs:file r_file_perms;
+allow mediacodec sysfs_gpu:dir r_dir_perms;
+allow mediacodec sysfs_gpu:file rw_file_perms;
+allow mediacodec sysfs_gpu:lnk_file r_file_perms;
+allow mediacodec vendor_m2m1shot_device:chr_file rw_file_perms;
+allow mediacodec video_device:chr_file rw_file_perms;
+allow mediacodec video_device:dir { search };

@@ -1,0 +1,1 @@
+dontaudit dumpstate mnt_vendor_file:dir getattr;

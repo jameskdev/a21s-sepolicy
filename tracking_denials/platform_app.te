@@ -1,0 +1,2 @@
+dontaudit platform_app exec_type:file getattr;
+dontaudit platform_app serialno_prop:file r_file_perms;

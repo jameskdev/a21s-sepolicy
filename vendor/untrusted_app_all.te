@@ -1,0 +1,31 @@
+# untrusted_app_all.te
+
+allow untrusted_app_all app_efs_file:dir search;
+allow untrusted_app_all batteryproperties_service:service_manager find;
+allow untrusted_app_all downfilters_lib_file:dir r_dir_perms;
+allow untrusted_app_all downfilters_lib_file:file rx_file_perms;
+allow untrusted_app_all felica_data_file:dir r_dir_perms;
+allow untrusted_app_all felica_data_file:file r_file_perms;
+allow untrusted_app_all mnt_media_rw_file:dir getattr;
+allow untrusted_app_all notification_service:service_manager find;
+allow untrusted_app_all persistent_data_block_service:service_manager find;
+allow untrusted_app_all power_service:service_manager find;
+allow untrusted_app_all same_process_hal_file:file { getattr map execute execute_no_trans };
+allow untrusted_app_all samplingprofiler_service:service_manager find;
+allow untrusted_app_all snap_data_file:dir r_dir_perms;
+allow untrusted_app_all snap_data_file:file r_file_perms;
+allow untrusted_app_all sysfs:lnk_file { getattr };
+allow untrusted_app_all sysfs_gpu:dir r_dir_perms;
+allow untrusted_app_all sysfs_gpu:file r_file_perms;
+allow untrusted_app_all sysfs_key_dump:file r_file_perms;
+allow untrusted_app_all sysfs_mmc_host:dir r_dir_perms;
+allow untrusted_app_all sysfs_mmc_host:file r_file_perms;
+allow untrusted_app_all sysfs_mmc_host:lnk_file r_file_perms;
+allow untrusted_app_all sysfs_sdinfo:dir r_dir_perms;
+allow untrusted_app_all sysfs_sdinfo:file r_file_perms;
+allow untrusted_app_all sysfs_sdinfo:lnk_file r_file_perms;
+allow untrusted_app_all sysfs_ss_writable:dir r_dir_perms;
+allow untrusted_app_all sysfs_ss_writable:file r_file_perms;
+allow untrusted_app_all sysfs_ss_writable:lnk_file r_file_perms;
+allow untrusted_app_all tcpopd_socket:sock_file { write lock append map open };
+allow untrusted_app_all wifi_service:service_manager find;

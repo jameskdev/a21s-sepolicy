@@ -1,0 +1,9 @@
+# gmscore_app.te
+
+dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager find;
+dontaudit gmscore_app hal_memtrack_default:binder call;
+dontaudit gmscore_app bluetooth_a2dp_offload_prop:file create_file_perms;
+dontaudit gmscore_app bluetooth_audio_hal_prop:file create_file_perms;
+dontaudit gmscore_app bluetooth_prop:file create_file_perms;
+dontaudit gmscore_app bootloader_boot_reason_prop:file r_file_perms;
+dontaudit gmscore_app exported_bluetooth_prop:file create_file_perms;

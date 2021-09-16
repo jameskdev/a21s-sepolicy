@@ -1,0 +1,1 @@
+dontaudit priv_app serialno_prop:file r_file_perms;

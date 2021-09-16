@@ -1,0 +1,38 @@
+# untrusteddomain.te
+
+typeattribute untrusted_app untrusteddomain;
+typeattribute untrusted_app_29 untrusteddomain;
+typeattribute untrusted_app_27 untrusteddomain;
+typeattribute untrusted_app_25 untrusteddomain;
+
+allow untrusteddomain asec_apk_file:dir r_dir_perms;
+allow untrusteddomain asec_apk_file:file r_file_perms;
+allow untrusteddomain asec_public_file:dir r_dir_perms;
+allow untrusteddomain asec_public_file:file r_file_perms;
+allow untrusteddomain batterystats_service:service_manager find;
+allow untrusteddomain bluetooth_efs_file:dir r_dir_perms;
+allow untrusteddomain bluetooth_efs_file:file r_file_perms;
+allow untrusteddomain carrier_efs_file:dir search;
+allow untrusteddomain carrier_efs_file:file { read open };
+allow untrusteddomain efs_file:dir search;
+allow untrusteddomain input_service:service_manager find;
+allow untrusteddomain m2m1shot_device:chr_file rw_file_perms;
+allow untrusteddomain msockets_socket:dir r_dir_perms;
+allow untrusteddomain ovr_device:chr_file r_file_perms;
+allow untrusteddomain proc_net:file r_file_perms;
+allow untrusteddomain sec_data_file:dir r_dir_perms;
+allow untrusteddomain sec_data_file:file r_file_perms;
+allow untrusteddomain sec_poc_file:dir search;
+allow untrusteddomain sysfs_battery:file r_file_perms;
+allow untrusteddomain sysfs_camera_writable:file r_file_perms;
+allow untrusteddomain sysfs_switch:dir r_dir_perms;
+allow untrusteddomain sysfs_switch:file r_file_perms;
+allow untrusteddomain sysfs_switch:lnk_file r_file_perms;
+allow untrusteddomain tunman_data_file:dir r_dir_perms;
+allow untrusteddomain tunman_data_file:file r_file_perms;
+allow untrusteddomain untrusteddomain:unix_stream_socket connectto;
+allow untrusteddomain usb_service:service_manager find;
+allow untrusteddomain user_service:service_manager find;
+allow untrusteddomain wallpaper_file:file ioctl;
+allow untrusteddomain webviewupdate_service:service_manager find;
+allow untrusteddomain wifi_efs_file:file rw_file_perms;

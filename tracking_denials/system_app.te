@@ -1,0 +1,2 @@
+dontaudit system_app serialno_prop:file r_file_perms;
+dontaudit system_app system_suspend_control_service:service_manager find;

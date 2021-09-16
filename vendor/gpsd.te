@@ -1,0 +1,38 @@
+# gpsd.te
+
+type gpsd, domain, mlstrustedsubject, netdomain;
+type gpsd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(gpsd)
+
+wakelock_use(gpsd)
+
+binder_call(gpsd, system_server)
+
+get_prop(gpsd, cp_reserved_mem_prop)
+get_prop(gpsd, debug_level_prop)
+get_prop(gpsd, exported3_radio_prop)
+get_prop(gpsd, mobicore_prop)
+get_prop(gpsd, product_ship_prop)
+get_prop(gpsd, recovery_prop)
+get_prop(gpsd, setupwizard_prop)
+get_prop(gpsd, tzdaemon_prop)
+set_prop(gpsd, hwservicemanager_prop)
+
+allow gpsd fwk_sensor_hwservice:hwservice_manager find;
+allow gpsd gps_device:chr_file rw_file_perms;
+allow gpsd gpsd_exec:file rx_file_perms;
+allow gpsd rild:unix_stream_socket connectto;
+allow gpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow gpsd serial_device:chr_file rw_file_perms;
+allow gpsd sysfs:file rw_file_perms;
+allow gpsd system_file:dir r_dir_perms;
+allow gpsd uart_device:chr_file rw_file_perms;
+allow gpsd vendor_gnss_device:chr_file rw_file_perms;
+allow gpsd vendor_gps_file:dir create_dir_perms;
+allow gpsd vendor_gps_file:fifo_file create_file_perms;
+allow gpsd vendor_gps_file:file create_file_perms;
+allow gpsd vendor_log_file:dir create_dir_perms;
+allow gpsd vendor_log_file:file create_file_perms;
+allow gpsd vendor_shell_exec:file rx_file_perms;
+allow gpsd vendor_toolbox_exec:file rx_file_perms;

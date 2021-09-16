@@ -1,0 +1,99 @@
+# cbd.te
+
+type cbd, domain;
+type cbd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(cbd)
+
+binder_call(cbd, system_server)
+
+get_prop(cbd, debug_level_prop)
+get_prop(cbd, domain_read_prop)
+get_prop(cbd, dumpstate_options_prop)
+get_prop(cbd, exported3_radio_prop)
+set_prop(cbd, powerctl_prop)
+set_prop(cbd, rild_prop)
+set_prop(cbd, vendor_rild_prop)
+set_prop(cbd, vendor_sys_default_prop)
+set_prop(cbd, vendor_config_default_prop)
+set_prop(cbd, vendor_ro_config_default_prop)
+
+allow cbd bin_nv_data_efs_file:file rw_file_perms;
+allow cbd block_device:dir r_dir_perms;
+allow cbd bluetooth:file read;
+allow cbd boot_block_device:blk_file { read open };
+allow cbd cbd:netlink_route_socket { create getattr bind setopt };
+allow cbd cbd:netlink_tcpdiag_socket create;
+allow cbd cbd:netlink_xfrm_socket { write create getattr bind setopt };
+allow cbd cbd:rawip_socket create;
+allow cbd cbd_sysfs:file { read write open };
+allow cbd cgroup:dir create_dir_perms;
+allow cbd cld_msg_device:chr_file rw_file_perms;
+allow cbd cp_debug_block_device:blk_file rw_file_perms;
+allow cbd debugfs_tracing:file { read open };
+allow cbd efs_file:dir create_dir_perms;
+allow cbd efs_file:file create_file_perms;
+allow cbd efs_file:lnk_file read;
+allow cbd hal_audio_default:file read;
+allow cbd hal_graphics_composer_default:file read;
+allow cbd hal_power_default:file read;
+allow cbd healthd:file read;
+allow cbd ipc_loopback0_device:chr_file rw_file_perms;
+allow cbd kernel:file read;
+allow cbd kernel:system syslog_read;
+allow cbd kmsg_device:chr_file rw_file_perms;
+allow cbd logd:file read;
+allow cbd logd:unix_stream_socket connectto;
+allow cbd logdr_socket:sock_file write;
+allow cbd mediacodec:file read;
+allow cbd mnt_user_file:dir r_dir_perms;
+allow cbd mnt_user_file:lnk_file r_file_perms;
+allow cbd mnt_vendor_file:dir create_dir_perms;
+allow cbd mnt_vendor_file:file create_file_perms;
+allow cbd mobicore_admin_device:chr_file rw_file_perms;
+allow cbd mobicore_user_device:chr_file rw_file_perms;
+allow cbd modem_block_device:blk_file r_file_perms;
+allow cbd nv_core_efs_file:file r_file_perms;
+allow cbd platform_app:dir search;
+allow cbd platform_app:file read;
+allow cbd priv_app:dir search;
+allow cbd priv_app:file read;
+allow cbd proc:file r_file_perms;
+allow cbd proc_cmdline:file { read getattr open };
+allow cbd proc_meminfo:file { read open };
+allow cbd proc_net:file { read write open };
+allow cbd radio:file r_file_perms;
+allow cbd radio_block_device:blk_file rw_file_perms;
+allow cbd radio_device:chr_file rw_file_perms;
+allow cbd rtc_device:chr_file rw_file_perms;
+allowxperm cbd rtc_device:socket ioctl { 0x7001 0x7002 0x7007 0x7009 };
+allow cbd sdcard_type:dir create_dir_perms;
+allow cbd sdcard_type:file create_file_perms;
+allow cbd sdcardd:file read;
+allow cbd sec_poc_file:dir create_dir_perms;
+allow cbd sec_poc_file:file create_file_perms;
+allow cbd sec_poc_file:lnk_file read;
+allow cbd sec_radio_device:chr_file rw_file_perms;
+allow cbd self:capability { setuid sys_boot };
+allow cbd self:capability2 { syslog block_suspend };
+allow cbd serial_device:chr_file rw_file_perms;
+allow cbd spi_boot_device:chr_file rw_file_perms;
+allow cbd ssipc_device:chr_file rw_file_perms;
+allow cbd storage_file:dir r_dir_perms;
+allow cbd storage_file:lnk_file r_file_perms;
+allow cbd su:file read;
+allow cbd surfaceflinger:file read;
+allow cbd sysfs:file rw_file_perms;
+allow cbd sysfs_sec:file rw_file_perms;
+allow cbd sysfs_ss_writable:file rw_file_perms;
+allow cbd sysfs_wake_lock:dir r_dir_perms;
+allow cbd sysfs_wake_lock:file rw_file_perms;
+allow cbd sysfs_wake_lock:lnk_file r_file_perms;
+allow cbd system_server:file read;
+allow cbd uart_device:chr_file rw_file_perms;
+allow cbd usbfs:dir r_dir_perms;
+allow cbd untrusted_app:dir search;
+allow cbd untrusted_app_25:dir search;
+allow cbd vendor_log_file:dir create_dir_perms;
+allow cbd vendor_log_file:file create_file_perms;
+allow cbd vendor_shell_exec:file rx_file_perms;

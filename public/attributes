@@ -1,0 +1,6 @@
+attribute dex2oat_access_device;
+attribute dex2oat_binder_domain;
+attribute dex2oat_find_hwservice;
+attribute omr_access_node;
+attribute system_suspend_access_sysnode;
+attribute xlat_access_sysnode;

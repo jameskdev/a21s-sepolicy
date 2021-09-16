@@ -1,0 +1,47 @@
+# vaultkeeperd.te
+
+type vaultkeeperd, domain;
+type vaultkeeperd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vaultkeeperd)
+
+binder_call(vaultkeeperd, tzdaemon)
+hwbinder_use(vaultkeeperd)
+tzdaemon_use(vaultkeeperd)
+vndbinder_use(vaultkeeperd)
+
+get_prop(vaultkeeperd, boot_em_did_prop)
+get_prop(vaultkeeperd, exported_system_prop)
+get_prop(vaultkeeperd, hwservicemanager_prop)
+get_prop(vaultkeeperd, mobicore_prop)
+get_prop(vaultkeeperd, vendor_factory_prop)
+get_prop(vaultkeeperd, vendor_mobicoredaemon_prop)
+get_prop(vaultkeeperd, vendor_tztsdaemon_prop)
+set_prop(vaultkeeperd, vendor_sec_vaultkeeper_prop)
+
+allow vaultkeeperd efs_file:dir { ioctl read write getattr lock open watch watch_reads add_name search };
+allow vaultkeeperd kernel:system syslog_read;
+allow vaultkeeperd kmsg_device:chr_file rw_file_perms;
+allow vaultkeeperd mobicore_admin_device:chr_file rw_file_perms;
+allow vaultkeeperd mobicore_user_device:chr_file rw_file_perms;
+allow vaultkeeperd proc_version:file r_file_perms;
+allow vaultkeeperd sec_poc_file:dir { ioctl read write getattr lock open watch watch_reads add_name search };
+allow vaultkeeperd self:capability { setgid setuid };
+allow vaultkeeperd steady_block_device:blk_file rw_file_perms;
+allow vaultkeeperd sysfs_scsi_host:dir r_dir_perms;
+allow vaultkeeperd sysfs_scsi_host:file r_file_perms;
+allow vaultkeeperd sysfs_scsi_host:lnk_file r_file_perms;
+allow vaultkeeperd tee_vendor_data_file:dir r_dir_perms;
+allow vaultkeeperd tee_vendor_data_file:file r_file_perms;
+allow vaultkeeperd tee_vendor_data_file:lnk_file r_file_perms;
+allow vaultkeeperd vaultkeeper_efs_file:file create_file_perms;
+allow vaultkeeperd vaultkeeper_efs_file:dir create_dir_perms;
+allow vaultkeeperd vaultkeeper_socket:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow vaultkeeperd vaultkeeper_socket:sock_file create_file_perms;
+allow vaultkeeperd vendor_file:file rx_file_perms;
+allow vaultkeeperd vendor_log_file:dir create_dir_perms;
+allow vaultkeeperd vendor_log_file:file create_file_perms;
+allow vaultkeeperd vendor_shell_exec:file rx_file_perms;
+allow vaultkeeperd vendor_toolbox_exec:file rx_file_perms;
+
+type_transition vaultkeeperd efs_file:dir vaultkeeper_efs_file "vk";

@@ -1,0 +1,15 @@
+# hal_memtrack_default.te
+
+allow hal_memtrack_default hal_memtrack_default_exec:file { read getattr map execute open entrypoint };
+
+allow hal_memtrack_default platform_app:dir open;
+allow hal_memtrack_default priv_app:dir open;
+allow hal_memtrack_default sec_debugfs:dir r_dir_perms;
+allow hal_memtrack_default sec_debugfs:file r_file_perms;
+allow hal_memtrack_default sysfs_mali_memtrack:file r_file_perms;
+allow hal_memtrack_default sysfs_gpu:dir search;
+allow hal_memtrack_default vendor_buftrace_device:chr_file { ioctl read open };
+allow hal_memtrack_default vendor_dma_buf_debugfs:file r_file_perms;
+allow hal_memtrack_default vendor_ion_debugfs:file { read getattr };
+allow hal_memtrack_default vendor_mali_debugfs:file { read getattr };
+allow hal_memtrack_default webview_zygote:dir read;

@@ -1,0 +1,3 @@
+# radio.te
+
+tzdaemon_use(radio)

@@ -1,0 +1,8 @@
+### attributes
+
+### Domain
+attribute tunneldomain;
+attribute untrusteddomain;
+
+### MISC
+attribute efs_type;

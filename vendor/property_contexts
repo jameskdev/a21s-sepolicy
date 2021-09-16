@@ -1,0 +1,88 @@
+# property_contexts
+
+# Camera
+persist.vendor.camera.                                         u:object_r:vendor_camera_prop:s0
+persist.vendor.dualCam.                                        u:object_r:vendor_camera_prop:s0
+persist.vendor.hifills.                                        u:object_r:vendor_camera_prop:s0
+persist.vendor.sys.camera.                                     u:object_r:vendor_camera_prop:s0
+vendor.camera.motor.service                                    u:object_r:vendor_camera_motor_prop:s0
+vendor.hal.camera.                                             u:object_r:vendor_camera_prop:s0
+vendor.npu.usr_drv.log_mask                                    u:object_r:vendor_sec_camera_prop:s0
+
+# CBD
+persist.vendor.cbd.                                            u:object_r:vendor_rild_prop:s0
+vendor.cbd.                                                    u:object_r:vendor_rild_prop:s0
+vendor.cbd.rfs_check_done                                      u:object_r:vendor_rild_prop:s0
+
+# Dolby
+vendor.dolby.                                                  u:object_r:vendor_dolby_prop:s0
+
+# Graphics
+vendor.debug.egl.                                              u:object_r:vendor_debug_egl_prop:s0
+vendor.display.sf.                                             u:object_r:vendor_display_sf_prop:s0
+
+# Heimdall
+ro.vendor.heimdalld.                                           u:object_r:vendor_heimdalld_prop:s0
+
+# NFC
+persist.vendor.nfc.log.index                                   u:object_r:vendor_nfc_prop:s0
+vendor.nfc.fw.                                                 u:object_r:vendor_nfc_prop:s0
+
+# NPU
+ro.vendor.eden.devices                                         u:object_r:vendor_eden_prop:s0
+ro.vendor.eden.npu.version.path                                u:object_r:vendor_eden_prop:s0
+
+# OMADM
+persist.vendor.sys.omadm_hfa_prl                               u:object_r:vendor_omadm_prop:s0
+persist.vendor.sys.spr_hfa_completed                           u:object_r:vendor_omadm_prop:s0
+
+# OTA
+vendor.ota.recovery.status                                     u:object_r:vendor_fota_prop:s0
+
+# RIL
+ro.vendor.multisim.                                            u:object_r:vendor_radio_prop:s0
+ro.vendor.radio.                                               u:object_r:vendor_radio_prop:s0
+ro.vendor.security.vaultkeeper.                                u:object_r:vendor_sec_vaultkeeper_prop:s0
+vendor.security.cass.                                          u:object_r:vendor_sec_cass_prop:s0
+vendor.security.vaultkeeper.                                   u:object_r:vendor_sec_vaultkeeper_prop:s0
+
+# Secure-OS
+vendor.fips.bssl.post                                          u:object_r:vendor_bssl_post_prop:s0
+vendor.proxy_daemon                                            u:object_r:vendor_proxydaemon_prop:s0
+vendor.secureos.                                               u:object_r:vendor_secureos_prop:s0
+vendor.sys.mobicoredaemon.enable                               u:object_r:vendor_mobicoredaemon_prop:s0
+vendor.TEEGRIS.                                                u:object_r:vendor_teegris_prop:s0
+vendor.teegris.                                                u:object_r:vendor_teegris_prop:s0
+vendor.tzdaemon                                                u:object_r:vendor_tzdaemon_prop:s0
+vendor.tzts_daemon                                             u:object_r:vendor_tztsdaemon_prop:s0
+
+# Vendor
+persist.vendor.config.                                         u:object_r:vendor_persist_config_default_prop:s0
+persist.vendor.dumpstate.verbose_logging.enabled               u:object_r:vendor_dumpstate_config_prop:s0
+persist.vendor.members.                                        u:object_r:vendor_members_prop:s0
+persist.vendor.softdog                                         u:object_r:vendor_softdog_prop:s0
+persist.vendor.sys.                                            u:object_r:vendor_persist_sys_default_prop:s0
+persist.vendor.uwb.log.index                                   u:object_r:vendor_uwb_prop:s0
+persist.vendor.zit.                                            u:object_r:vendor_zygoteinit_prop:s0
+ro.vendor.config.                                              u:object_r:vendor_ro_config_default_prop:s0
+ro.vendor.cscsupported                                         u:object_r:vendor_default_prop:s0
+ro.vendor.ddk.set.afbc                                         u:object_r:vendor_default_prop:s0
+ro.vendor.model_suffix                                         u:object_r:vendor_model_suffix_prop:s0
+ro.vendor.sys.                                                 u:object_r:vendor_ro_sys_default_prop:s0
+ro.vendor.wfdsupport                                           u:object_r:vendor_default_prop:s0
+vendor.config.                                                 u:object_r:vendor_config_default_prop:s0
+vendor.seHal.init                                              u:object_r:vendor_sehal_init_prop:s0
+vendor.sys.                                                    u:object_r:vendor_sys_default_prop:s0
+
+# Wlan
+vendor.wlan.driver.version                                     u:object_r:vendor_wifi_version:s0
+vendor.wlan.firmware.version                                   u:object_r:vendor_wifi_version:s0
+vendor.wlan.ramdump_mode                                       u:object_r:vendor_wifi_ramdump_prop:s0
+vendor.wlandriver.                                             u:object_r:vendor_wlandriver_prop:s0
+vendor.wlbtd.                                                  u:object_r:vendor_wlbtd_prop:s0
+vendor.wlbtd.tar_files_per_trigger                             u:object_r:vendor_wlbtd_prop:s0
+vendor.wlbtd.version                                           u:object_r:vendor_wlbtd_prop:s0
+vendor.wlbtd.board_id                                          u:object_r:vendor_wlbtd_prop:s0
+
+# Vendor second stage modules
+vendor.device.modules.ready                                    u:object_r:vendor_device_prop:s0

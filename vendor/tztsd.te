@@ -1,0 +1,17 @@
+# tztsd.te
+
+type tztsd, domain;
+type tztsd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(tztsd)
+
+tzdaemon_use(tztsd)
+
+get_prop(tztsd, debug_level_prop)
+get_prop(tztsd, product_ship_prop)
+set_prop(tztsd, vendor_tztsdaemon_prop)
+
+allow tztsd tz_device:chr_file rw_file_perms;
+allow tztsd tz_socket:dir rw_dir_perms;
+allow tztsd tz_socket:sock_file create_file_perms;
+allow tztsd tz_user_device:chr_file ioctl;

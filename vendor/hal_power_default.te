@@ -1,0 +1,35 @@
+# hal_power_default.te
+
+unix_socket_send(hal_power_default, epicd, epicd_socket)
+
+allow hal_power_default hal_power_default_exec:file { read getattr map execute open entrypoint };
+
+allow hal_power_default hidl_base_hwservice:hwservice_manager add;
+allow hal_power_default sysfs:file rw_file_perms;
+allow hal_power_default sysfs_battery:dir r_dir_perms;
+allow hal_power_default sysfs_battery:file rw_file_perms;
+allow hal_power_default sysfs_devfreq:dir r_dir_perms;
+allow hal_power_default sysfs_devfreq:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:file { write lock append map open };
+allow hal_power_default pm_qos_file:chr_file rw_file_perms;
+allow hal_power_default sysfs_power:dir r_dir_perms;
+allow hal_power_default sysfs_power:file rw_file_perms;
+allow hal_power_default sysfs_sec:dir r_dir_perms;
+allow hal_power_default sysfs_sec:file rw_file_perms;
+allow hal_power_default sysfs_sec:lnk_file rw_file_perms;
+allow hal_power_default sysfs_ski_hal_readable:dir r_dir_perms;
+allow hal_power_default sysfs_ski_hal_readable:file r_file_perms;
+allow hal_power_default sysfs_ski_hal_readable:lnk_file r_file_perms;
+allow hal_power_default sysfs_ski_pen_writable:dir r_dir_perms;
+allow hal_power_default sysfs_ski_pen_writable:file rw_file_perms;
+allow hal_power_default sysfs_ski_power_readable:dir r_dir_perms;
+allow hal_power_default sysfs_ski_power_readable:file r_file_perms;
+allow hal_power_default sysfs_ski_power_readable:lnk_file r_file_perms;
+allow hal_power_default sysfs_ski_touch_writable:dir r_dir_perms;
+allow hal_power_default sysfs_ski_touch_writable:file rw_file_perms;
+allow hal_power_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_power_default sysfs_ss_writable:file rw_file_perms;
+allow hal_power_default sysfs_type:dir r_dir_perms;
+allow hal_power_default sysfs_type:file r_file_perms;
+allow hal_power_default sysfs_type:lnk_file r_file_perms;
+allow hal_power_default system_app:fifo_file write;

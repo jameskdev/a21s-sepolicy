@@ -1,0 +1,6 @@
+# untrusted_app_29.te
+
+allow untrusted_app_29 carrier_file:dir r_dir_perms;
+allow untrusted_app_29 carrier_file:file r_file_perms;
+allow untrusted_app_29 omr_file:dir r_dir_perms;
+allow untrusted_app_29 proc_net:file r_file_perms;

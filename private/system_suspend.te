@@ -1,0 +1,5 @@
+# system_suspend.te
+
+allow system_suspend system_suspend_access_sysnode:dir r_dir_perms;
+allow system_suspend system_suspend_access_sysnode:file r_file_perms;
+allow system_suspend system_suspend_access_sysnode:lnk_file r_file_perms;

@@ -1,0 +1,39 @@
+# hal_graphics_composer_default.te
+
+hal_client_domain(hal_graphics_composer_default, hal_graphics_allocator)
+
+get_prop(hal_graphics_composer_default, sec_camera_prop)
+get_prop(hal_graphics_composer_default, surfaceflinger_display_prop)
+get_prop(hal_graphics_composer_default, vendor_debug_egl_prop)
+set_prop(hal_graphics_composer_default, vendor_display_sf_prop)
+
+vndbinder_use(hal_graphics_composer_default)
+
+add_service(hal_graphics_composer_default, vendor_surfaceflinger_vndservice)
+
+allow hal_graphics_composer_default hal_graphics_allocator_default:binder call;
+allow hal_graphics_composer_default hal_graphics_allocator_hwservice:hwservice_manager find;
+allow hal_graphics_composer_default hal_graphics_composer_default_exec:file { read getattr map execute open entrypoint };
+allow hal_graphics_composer_default hal_graphics_composer_server_tmpfs:file { read write getattr map };
+allow hal_graphics_composer_default ion_device:chr_file write;
+allow hal_graphics_composer_default sec_debugfs:dir r_dir_perms;
+allow hal_graphics_composer_default sec_debugfs:file r_file_perms;
+allow hal_graphics_composer_default sec_debugfs:lnk_file r_file_perms;
+allow hal_graphics_composer_default self:global_capability_class_set { sys_admin sys_resource };
+allow hal_graphics_composer_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow hal_graphics_composer_default sysfs:file r_file_perms;
+allow hal_graphics_composer_default sysfs_camera_writable:dir r_dir_perms;
+allow hal_graphics_composer_default sysfs_camera_writable:file r_file_perms;
+allow hal_graphics_composer_default sysfs_camera_writable:lnk_file r_file_perms;
+allow hal_graphics_composer_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_graphics_composer_default sysfs_ss_writable:file r_file_perms;
+allow hal_graphics_composer_default sysfs_ss_writable:lnk_file r_file_perms;
+allow hal_graphics_composer_default sysfs_switch:dir search;
+allow hal_graphics_composer_default sysfs_switch:file r_file_perms;
+allow hal_graphics_composer_default tmpfs:dir { write lock open add_name remove_name search };
+allow hal_graphics_composer_default vendor_log_file:dir rw_dir_perms;
+allow hal_graphics_composer_default vendor_log_file:file create_file_perms;
+allow hal_graphics_composer_default vendor_log_file:file rw_file_perms;
+allow hal_graphics_composer_default vendor_secmem_device:chr_file rw_file_perms;
+allow hal_graphics_composer_default video_device:chr_file rw_file_perms;
+allow hal_graphics_composer_default video_device:dir r_dir_perms;

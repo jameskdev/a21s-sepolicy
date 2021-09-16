@@ -1,0 +1,85 @@
+# rild.te
+
+binder_call(rild, vaultkeeperd)
+unix_socket_connect(rild, vaultkeeper, vaultkeeperd)
+vndbinder_use(rild)
+
+get_prop(rild, product_ship_prop)
+get_prop(rild, sec_timed_prop)
+get_prop(rild, vendor_model_suffix_prop)
+set_prop(rild, exported_radio_prop)
+set_prop(rild, powerctl_prop)
+set_prop(rild, rild_prop)
+set_prop(rild, vendor_members_prop)
+set_prop(rild, vendor_rild_prop)
+
+allow rild rild_exec:file { read getattr map execute open entrypoint };
+
+allow rild EngineeringMode_vndservice:service_manager find;
+allow rild app_efs_file:dir create_dir_perms;
+allow rild app_efs_file:file create_file_perms;
+allow rild bin_nv_data_efs_file:file create_file_perms;
+allowxperm rild bin_nv_data_efs_file:file ioctl 0x6601;
+allow rild cachedata_block_device:blk_file rw_file_perms;
+allow rild domain:dir { read getattr open search };
+allow rild domain:file { read getattr open };
+allow rild domain:lnk_file { read getattr open };
+allow rild drb_device:chr_file rw_file_perms;
+allow rild dumplog_data_file:file { ioctl read write getattr append };
+allow rild dumpstate:fd use;
+allow rild efs_file:dir rw_dir_perms;
+allow rild efs_gsm_file:dir create_dir_perms;
+allow rild efs_gsm_file:file create_file_perms;
+allow rild eris:tun_socket relabelfrom;
+allow rild gpsd:dir search;
+allow rild gpsd:file { read getattr open };
+allow rild hal_audio_default:dir search;
+allow rild hal_audio_default:file { read getattr open };
+allow rild imei_efs_file:dir create_dir_perms;
+allow rild imei_efs_file:file create_file_perms;
+allow rild kmsg_device:chr_file rw_file_perms;
+allow rild knox_kap_device:chr_file r_file_perms;
+allow rild logd:unix_stream_socket connectto;
+allow rild logdr_socket:sock_file write;
+allow rild media_rw_data_file:file { ioctl read write getattr append };
+allow rild mnt_user_file:dir r_dir_perms;
+allow rild mnt_user_file:lnk_file r_file_perms;
+allow rild mnt_vendor_file:dir r_dir_perms;
+allow rild nv_core_efs_file:file create_file_perms;
+allow rild omr_file:dir r_dir_perms;
+allow rild omr_file:file r_file_perms;
+allow rild paramblk_device:blk_file rw_file_perms;
+allow rild proc_net:file rw_file_perms;
+allow rild proc_qtaguid_stat:file r_file_perms;
+allow rild prov_efs_file:dir search;
+allow rild prov_efs_file:file r_file_perms;
+allow rild qosd_socket:sock_file { ioctl read write getattr append };
+allow rild radio_block_device:blk_file rw_file_perms;
+allow rild radio_data_file:file { ioctl read getattr };
+allow rild ramdump_device:chr_file r_file_perms;
+allow rild rtc_device:chr_file rw_file_perms;
+allow rild sdcardfs:dir create_dir_perms;
+allow rild sdcardfs:file create_file_perms;
+allow rild sec_efs_file:dir create_dir_perms;
+allow rild sec_efs_file:file create_file_perms;
+allow rild sec_poc_file:dir rw_dir_perms;
+allow rild sec_radio_device:chr_file rw_file_perms;
+allow rild self:capability { chown sys_time };
+allow rild self:packet_socket { ioctl read write create getopt setopt };
+allowxperm rild self:packet_socket ioctl { 0x8906 0x8933 };
+allowxperm rild self:socket ioctl 0xc800;
+allow rild self:tun_socket { create relabelfrom relabelto };
+allowxperm rild tun_device:chr_file ioctl { 0x54ca 0x54cb };
+allow rild ssipc_device:chr_file rw_file_perms;
+allow rild storage_file:dir r_dir_perms;
+allow rild storage_file:file rw_file_perms;
+allow rild storage_file:lnk_file rw_file_perms;
+allow rild sysfs_ss_writable:file rw_file_perms;
+allow rild system_data_file:dir { getattr search };
+allow rild tun_device:chr_file rw_file_perms;
+allow rild uart_device:chr_file rw_file_perms;
+allow rild vaultkeeper_socket:dir r_dir_perms;
+allow rild vendor_log_file:dir create_dir_perms;
+allow rild vendor_log_file:file create_file_perms;
+allow rild vendor_radio_data_file:dir create_dir_perms;
+allow rild vendor_radio_data_file:file create_file_perms;

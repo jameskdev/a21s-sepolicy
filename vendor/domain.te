@@ -1,0 +1,35 @@
+# domain.te
+
+get_prop(domain, csc_prop)
+get_prop(domain, debug_level_prop)
+get_prop(domain, domain_read_prop)
+get_prop(domain, ina_status_prop)
+get_prop(domain, multisim_prop)
+get_prop(domain, setupwizard_prop)
+get_prop(domain, vendor_camera_prop)
+get_prop(domain, vendor_factory_prop)
+get_prop(domain, vendor_radio_prop)
+get_prop(domain, vendor_securehw_prop)
+get_prop(domain, vendor_securenvm_prop)
+
+allow domain block_device:dir r_dir_perms;
+allow domain debugfs_trace_marker:file getattr;
+allow domain device:dir r_dir_perms;
+allow domain efs_file:dir { getattr search };
+allow domain kernel:key search;
+allow domain sec_poc_file:dir { getattr search };
+allow domain sec_efs_file:lnk_file r_file_perms;
+allow domain sec_debugfs:dir search;
+allow domain spu_file:dir search;
+allow domain vendor_abox_debugfs:dir r_dir_perms;
+allow domain vendor_abox_debugfs:file { ioctl lock open };
+allow domain vendor_configs_file:file map;
+allow domain vendor_dma_buf_debugfs:dir r_dir_perms;
+allow domain vendor_ion_debugfs:dir r_dir_perms;
+allow domain vendor_ion_debugfs:file { ioctl lock open };
+allow domain vendor_mali_debugfs:dir r_dir_perms;
+allow domain vendor_mali_debugfs:file { ioctl lock open };
+allow domain vendor_regmap_debugfs:dir r_dir_perms;
+allow domain vendor_regmap_debugfs:file { ioctl lock open };
+allow domain vendor_wlbtd_debugfs:dir r_dir_perms;
+allow domain vendor_wlbtd_debugfs:file { ioctl lock open };

@@ -1,0 +1,75 @@
+# property.te
+
+# system public properties
+system_public_prop(ap_serial_prop)
+system_public_prop(boot_em_did_prop)
+system_public_prop(csc_prop)
+system_public_prop(dsmsd_prop)
+system_public_prop(oneseg_prop)
+system_public_prop(sns_camera_light_prop)
+system_public_prop(spud_prop)
+system_public_prop(system_fota_prop)
+system_public_prop(wlbtlog_prop)
+
+# vendor restricted properties
+vendor_restricted_prop(vendor_debug_snap_prop)
+vendor_restricted_prop(vendor_em_tstate_prop)
+vendor_restricted_prop(vendor_securehw_prop)
+vendor_restricted_prop(vendor_securenvm_prop)
+
+# other properties
+type apm_prop, property_type;
+type armnn_prop, property_type;
+type boot_dram_info_prop, property_type;
+type boot_force_upload_prop, property_type;
+type cache_status_prop, property_type;
+type ccm_prop, property_type;
+type compact_dump_prop, property_type;
+type cp_reserved_mem_prop, property_type;
+type ctl_factory_ssc_prop, property_type;
+type debug_level_prop, property_type;
+type dolby_prop, property_type;
+type domain_read_prop, property_type;
+type em_version_prop, property_type;
+type facm_prop, property_type;
+type ina_status_prop, property_type;
+type mobicore_prop, property_type;
+type multisim_prop, property_type;
+type nfc_ese_prop, property_type;
+type product_ship_prop, property_type;
+type receiver_error_prop, property_type;
+type recovery_prop, property_type;
+type rfkilldisabled_prop, property_type;
+type rild_prop, property_type;
+type score_prop, property_type;
+type sec_audio_prop, property_type;
+type sec_audio_usb_prop, property_type;
+type sec_bluetooth_prop, property_type;
+type sec_camera_prop, property_type;
+type sec_factory_facm_prop, property_type;
+type sec_timed_prop, property_type;
+type security_prop, property_type;
+type security_sepolicy_prop, property_type;
+type setupwizard_prop, property_type;
+type smartamp_prop, property_type;
+type system_product_prop, property_type;
+type tzdaemon_prop, property_type;
+type tztsdaemon_prop, property_type;
+type vendor_bluetooth_prop, property_type;
+type vendor_df_prop, property_type;
+type vendor_factory_prop, property_type;
+type vendor_fr_dlymgr_prop, property_type;
+type vendor_fr_wkrmgr_prop, property_type;
+type vendor_hostapd_prop, property_type;
+type vendor_mbim_prop, property_type;
+type vendor_mediadrm_prop, property_type;
+type vendor_ofi_prop, property_type;
+type vendor_rmnet_prop, property_type;
+type vendor_sensor_prop, property_type;
+type vendor_tmfd_prop, property_type;
+type vendor_wda_prop, property_type;
+type vendor_wvkprov_prop, property_type;
+type vendor_zram_prop, property_type;
+type vramdiskd_prop, property_type;
+type vzw_os_prop, property_type;
+type wpa_supplicant_prop, property_type;

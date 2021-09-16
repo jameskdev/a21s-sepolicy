@@ -1,0 +1,24 @@
+# eris.te
+
+type eris, domain, coredomain, mlstrustedsubject, netdomain, tunneldomain;
+type eris_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(eris)
+
+binder_call(eris, hwservicemanager)
+binder_call(eris, system_suspend_server)
+
+get_prop(eris, hwservicemanager_prop)
+
+allow eris eris_data_file:dir create_dir_perms;
+allow eris eris_data_file:file create_file_perms;
+allow eris proc_net:file rw_file_perms;
+allow eris rild:tun_socket relabelfrom;
+allow eris self:tun_socket { read write create getattr setattr lock relabelto append map bind connect getopt setopt shutdown };
+allow eris self:capability { net_admin net_raw };
+allow eris sysfs_wake_lock:file rw_file_perms;
+allow eris system_file:dir { read open };
+allow eris system_file:file ioctl;
+allow eris tun_device:chr_file rw_file_perms;
+allowxperm eris tun_device:chr_file ioctl { 0x54ca };
+allow eris tunneldomain:tun_socket relabelfrom;

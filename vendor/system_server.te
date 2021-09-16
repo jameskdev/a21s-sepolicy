@@ -1,0 +1,18 @@
+# system_server.te
+
+binder_call(system_server, cbd)
+binder_call(system_server, gpsd)
+binder_call(system_server, hal_camera_default)
+binder_call(system_server, hal_power_default)
+binder_call(system_server, tzdaemon)
+binder_call(system_server, vaultkeeperd)
+
+get_prop(system_server, receiver_error_prop)
+get_prop(system_server, vendor_security_patch_level_prop)
+
+tzdaemon_use(system_server)
+
+allow system_server app_zygote:process getpgid;
+allow system_server gps_data_file:dir r_dir_perms;
+allow system_server gps_data_file:file create_file_perms;
+allow system_server proc_last_kmsg:file r_file_perms;

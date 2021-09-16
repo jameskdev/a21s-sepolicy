@@ -1,0 +1,3 @@
+dontaudit untrusted_app_25 exec_type:file getattr;
+dontaudit untrusted_app_25 file_type:dir getattr;
+dontaudit untrusted_app_25 file_type:file getattr;

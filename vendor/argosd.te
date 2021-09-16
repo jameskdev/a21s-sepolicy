@@ -1,0 +1,23 @@
+# argosd.te
+
+type argosd, domain;
+type argosd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(argosd)
+
+allow argosd proc:file { read open };
+allow argosd proc_net:file { read getattr open };
+allow argosd sysfs:file { read getattr open };
+allow argosd radio_device:chr_file rw_file_perms;
+allow argosd sec_radio_device:chr_file rw_file_perms;
+allow argosd sysfs_scsi_host:file r_file_perms;
+allow argosd sysfs:dir r_dir_perms;
+allow argosd sysfs:file r_file_perms;
+allow argosd sysfs_scsi_host:dir r_dir_perms;
+allow argosd sysfs_scsi_host:file r_file_perms;
+allow argosd proc:dir r_dir_perms;
+allow argosd proc:file r_file_perms;
+allow argosd sysfs_android_usb:dir r_dir_perms;
+allow argosd sysfs_android_usb:file r_file_perms;
+allow argosd sysfs_mmc_host:file r_file_perms;
+allow argosd sysfs_mmc_host:dir r_dir_perms;

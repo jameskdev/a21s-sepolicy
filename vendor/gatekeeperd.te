@@ -1,0 +1,4 @@
+# gatekeeperd.te
+
+binder_call(gatekeeperd, tzdaemon)
+tzdaemon_use(gatekeeperd)

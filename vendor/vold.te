@@ -1,0 +1,53 @@
+# vold.te
+
+tzdaemon_use(vold)
+
+get_prop(vold, device_logging_prop)
+set_prop(vold, audio_prop)
+set_prop(vold, ctl_start_prop)
+set_prop(vold, exported_system_prop)
+set_prop(vold, system_prop)
+
+allow vold appdomain:fd use;
+
+allow vold mnt_vendor_file:dir r_dir_perms;
+
+allow vold efs_file:dir rw_dir_perms;
+allow vold imei_efs_file:dir r_dir_perms;
+allow vold imei_efs_file:file r_file_perms;
+allow vold mb_po_efs_file:dir create_dir_perms;
+allow vold mb_po_efs_file:file create_file_perms;
+allow vold sec_efs_file:dir create_dir_perms;
+allow vold sec_efs_file:file create_file_perms;
+allow vold sec_poc_file:dir rw_dir_perms;
+allow vold sec_poc_file:file rw_file_perms;
+allow vold tee_efs_file:dir search;
+
+allow vold keydata_block_device:blk_file r_file_perms;
+allow vold keydata_block_device:blk_file rw_file_perms;
+allow vold keydata_data_file:dir create_dir_perms;
+allow vold keydata_data_file:file create_file_perms;
+allow vold keyrefuge_block_device:blk_file r_file_perms;
+allow vold keyrefuge_block_device:blk_file rw_file_perms;
+allow vold keyrefuge_data_file:dir create_dir_perms;
+allow vold keyrefuge_data_file:file create_file_perms;
+
+allow vold swap_device:blk_file r_file_perms;
+allow vold sysfs_mmc_host:dir r_dir_perms;
+allow vold sysfs_mmc_host:file rw_file_perms;
+allow vold sysfs_scsi_host:dir r_dir_perms;
+allow vold sysfs_scsi_host:file rw_file_perms;
+allow vold sysfs_ski_testinfra_writable:dir r_dir_perms;
+allow vold sysfs_ski_testinfra_writable:file rw_file_perms;
+allow vold sysfs_ss_writable:file rw_file_perms;
+allow vold sysfs_vnswap:file { write lock append map open };
+allow vold sysfs_zram:file rw_file_perms;
+
+allow vold tima_keystore_file:dir r_dir_perms;
+allow vold tima_keystore_file:file r_file_perms;
+
+allow vold tz_device:chr_file rw_file_perms;
+allow vold tz_socket:sock_file write;
+
+allow vold vendor_configs_file:file r_file_perms;
+allow vold vendor_data_file:file getattr;

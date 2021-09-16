@@ -1,0 +1,13 @@
+# gmscore_app.te
+
+get_prop(gmscore_app, adbd_prop)
+get_prop(gmscore_app, ap_serial_prop)
+get_prop(gmscore_app, apexd_prop)
+get_prop(gmscore_app, apk_verity_prop)
+get_prop(gmscore_app, apm_prop)
+get_prop(gmscore_app, armnn_prop)
+get_prop(gmscore_app, boot_dram_info_prop)
+get_prop(gmscore_app, boot_em_did_prop)
+get_prop(gmscore_app, boot_force_upload_prop)
+get_prop(gmscore_app, boottime_prop)
+get_prop(gmscore_app, boottime_public_prop)

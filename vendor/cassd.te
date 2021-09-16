@@ -1,0 +1,22 @@
+# cassd.te
+
+type cassd, domain;
+type cassd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(cassd)
+
+unix_socket_connect(cassd, vaultkeeper, vaultkeeperd)
+
+allow cassd self:capability { setgid setuid };
+allow cassd ssipc_device:chr_file rw_file_perms;
+allow cassd sysfs_wake_lock:file rw_file_perms;
+allow cassd sec_radio_device:chr_file rw_file_perms;
+allow cassd vaultkeeper_socket:dir search;
+allow cassd cassd:capability2 block_suspend;
+allow cassd kmsg_device:chr_file rw_file_perms;
+allow cassd rild:unix_stream_socket connectto;
+
+vndbinder_use(cassd)
+
+get_prop(cassd, vendor_sec_vaultkeeper_prop)
+set_prop(cassd, vendor_sec_cass_prop)

@@ -1,0 +1,3 @@
+# drmserver.te
+
+tzdaemon_use(drmserver)

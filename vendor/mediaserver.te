@@ -1,0 +1,9 @@
+# mediaserver.te
+
+tzdaemon_use(mediaserver)
+
+binder_call(mediaserver, hal_vendor_configstore_default)
+binder_call(mediaserver, hal_vendor_hwcservice_default)
+
+allow mediaserver hal_vendor_configstore_hwservice:hwservice_manager find;
+allow mediaserver hal_vendor_surfaceflinger_hwservice:hwservice_manager find;

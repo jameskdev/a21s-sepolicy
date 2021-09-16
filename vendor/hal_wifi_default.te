@@ -1,0 +1,29 @@
+# hal_wifi_default.te
+
+allow hal_wifi_default hal_wifi_default_exec:file { read getattr map execute open entrypoint };
+
+set_prop(hal_wifi_default, vendor_wifi_ramdump_prop)
+set_prop(hal_wifi_default, vendor_wlandriver_prop)
+set_prop(hal_wifi_default, vendor_wifi_version)
+
+allow hal_wifi_default dumpstate:fd use;
+allow hal_wifi_default kernel:system module_request;
+allow hal_wifi_default mnt_vendor_file:dir r_dir_perms;
+allow hal_wifi_default proc_modules:file r_file_perms;
+allow hal_wifi_default proc_net:file write;
+allow hal_wifi_default proc_wifi_dbg:dir r_dir_perms;
+allow hal_wifi_default proc_wifi_dbg:file r_file_perms;
+allow hal_wifi_default proc_wifi_dbg:lnk_file r_file_perms;
+allow hal_wifi_default self:capability sys_module;
+allow hal_wifi_default sysfs_ss_writable:file rw_file_perms;
+allow hal_wifi_default sysfs_wifi:file rw_file_perms;
+allow hal_wifi_default tombstone_wifi_data_file:dir rw_dir_perms;
+allow hal_wifi_default tombstone_wifi_data_file:file create_file_perms;
+allow hal_wifi_default vendor_convergence_data_file:dir rw_dir_perms;
+allow hal_wifi_default vendor_convergence_data_file:file create_file_perms;
+allow hal_wifi_default vendor_file:system module_load;
+allow hal_wifi_default vendor_log_file:dir create_dir_perms;
+allow hal_wifi_default vendor_log_file:file create_file_perms;
+allow hal_wifi_default vendor_log_file:lnk_file unlink;
+allow hal_wifi_default wifi_efs_file:dir rw_dir_perms;
+allow hal_wifi_default wifi_efs_file:file create_file_perms;

@@ -1,0 +1,23 @@
+# fsck.te
+
+allow fsck carrier_block_device:blk_file rw_file_perms;
+allow fsck cpefs_block_device:blk_file rw_file_perms;
+allow fsck dqmdbgblk_device:blk_file rw_file_perms;
+allow fsck efsblk_device:blk_file rw_file_perms;
+allow fsck efs_block_device:blk_file rw_file_perms;
+allow fsck emmcblk_device:blk_file rw_file_perms;
+allow fsck keydata_block_device:blk_file rw_file_perms;
+allow fsck keyrefuge_block_device:blk_file rw_file_perms;
+allow fsck knox_dar_device:chr_file r_file_perms;
+allow fsck omr_block_device:blk_file rw_file_perms;
+allow fsck omr_file:dir r_dir_perms;
+allow fsck omr_file:file r_file_perms;
+allow fsck omr_file:lnk_file r_file_perms;
+allow fsck persdatablk_device:blk_file rw_file_perms;
+allow fsck persist_block_device:blk_file rw_file_perms;
+allow fsck proc_fslog:dir r_dir_perms;
+allow fsck proc_fslog:file rw_file_perms;
+allow fsck sbfs_block_device:blk_file rw_file_perms;
+allow fsck sec_efsblk_device:blk_file rw_file_perms;
+allow fsck self:capability sys_admin;
+allow fsck vold:netlink_socket { read write };

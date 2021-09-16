@@ -1,0 +1,8 @@
+# tzdaemon_use(domain)
+define(`tzdaemon_use', `
+  get_prop($1, tzdaemon_prop)
+  get_prop($1, vendor_teegris_prop)
+  allow $1 tzdaemon:fd use;
+  allow $1 tz_user_device:chr_file rw_file_perms;
+  allow $1 tee_efs_file:dir search;
+')

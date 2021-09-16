@@ -1,0 +1,29 @@
+# hal_wifi_supplicant_default.te
+
+hwbinder_use(hal_wifi_supplicant_default)
+binder_call(hal_wifi_supplicant_default, wifi_keystore_service_server)
+
+get_prop(hal_wifi_supplicant_default, debug_level_prop)
+get_prop(hal_wifi_supplicant_default, device_logging_prop)
+get_prop(hal_wifi_supplicant_default, exported_wifi_prop)
+get_prop(hal_wifi_supplicant_default, product_ship_prop)
+
+allow hal_wifi_supplicant_default hal_wifi_supplicant_default_exec:file { read getattr map execute open entrypoint };
+
+allow hal_wifi_supplicant_default devpts:chr_file { read write getattr open };
+allow hal_wifi_supplicant_default devpts:file getattr;
+allow hal_wifi_supplicant_default dumpstate:fd use;
+allow hal_wifi_supplicant_default efs_file:dir search;
+allow hal_wifi_supplicant_default mnt_vendor_file:dir r_dir_perms;
+allow hal_wifi_supplicant_default proc_net:file rw_file_perms;
+allow hal_wifi_supplicant_default proc_net_type:file write;
+allow hal_wifi_supplicant_default rild:unix_stream_socket connectto;
+allow hal_wifi_supplicant_default sec_poc_file:dir search;
+allow hal_wifi_supplicant_default system_wifi_keystore_hwservice:hwservice_manager find;
+allow hal_wifi_supplicant_default vendor_convergence_data_file:dir rw_dir_perms;
+allow hal_wifi_supplicant_default vendor_convergence_data_file:file create_file_perms;
+allow hal_wifi_supplicant_default vendor_log_file:dir rw_dir_perms;
+allow hal_wifi_supplicant_default vendor_log_file:file create_file_perms;
+allow hal_wifi_supplicant_default wpa_data_file:dir create_dir_perms;
+allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
+allow hal_wifi_supplicant_default wpa_data_file:sock_file create_file_perms;

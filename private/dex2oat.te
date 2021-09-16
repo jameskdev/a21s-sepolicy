@@ -1,0 +1,6 @@
+# dex2oat.te
+
+binder_call(dex2oat, dex2oat_binder_domain)
+
+allow dex2oat dex2oat_access_device:chr_file rw_file_perms;
+allow dex2oat dex2oat_find_hwservice:hwservice_manager find;

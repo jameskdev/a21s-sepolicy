@@ -1,0 +1,13 @@
+# service_contexts
+
+# HAL Base Service
+vendor.samsung.hardware.base.ISehBase/default                  u:object_r:hal_base_service:s0
+
+# Hyper
+vendor.samsung.hardware.hyper.ISehHyPer/default                u:object_r:hal_hyper_service:s0
+
+# Lights
+vendor.samsung.hardware.light.ILights/default                  u:object_r:hal_light_service:s0
+
+# UWB
+vendor.samsung.hardware.uwb@1.0::ISehUwb/default               u:object_r:hal_uwb_service:s0

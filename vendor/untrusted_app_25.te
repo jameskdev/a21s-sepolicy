@@ -1,0 +1,15 @@
+# untrusted_app_25.te
+
+allow untrusted_app_25 app_data_file:lnk_file unlink;
+allow untrusted_app_25 mobicore_user_device:chr_file rw_file_perms;
+allow untrusted_app_25 msockets_socket:sock_file rw_file_perms;
+allow untrusted_app_25 overlay_service:service_manager find;
+allow untrusted_app_25 rootfs:dir { read open };
+allow untrusted_app_25 sysfs_mmc_host:dir r_dir_perms;
+allow untrusted_app_25 sysfs_mmc_host:file r_file_perms;
+allow untrusted_app_25 sysfs_mmc_host:lnk_file r_file_perms;
+allow untrusted_app_25 sysfs_net:dir r_dir_perms;
+allow untrusted_app_25 sysfs_net:lnk_file r_file_perms;
+allow untrusted_app_25 sysfs_ss_writable:dir r_dir_perms;
+allow untrusted_app_25 sysfs_ss_writable:file r_file_perms;
+allow untrusted_app_25 untrusted_app_25:icmp_socket create_socket_perms_no_ioctl;

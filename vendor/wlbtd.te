@@ -1,0 +1,46 @@
+# wlbtd.te
+
+type wlbtd, domain;
+type wlbtd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(wlbtd)
+
+set_prop(wlbtd, vendor_wlbtd_prop)
+
+allow wlbtd kernel:system syslog_read;
+allow wlbtd kmsg_device:chr_file { read open };
+allow wlbtd kmsg_device:file { read open };
+allow wlbtd logdr_socket:sock_file write;
+allow wlbtd logd:unix_stream_socket connectto;
+allow wlbtd mnt_user_file:dir search;
+allow wlbtd mnt_user_file:file r_file_perms;
+allow wlbtd mnt_user_file:lnk_file read;
+allow wlbtd proc:file { read getattr open };
+allow wlbtd rootfs:dir { read open };
+allow wlbtd sdcard_type:dir create_dir_perms;
+allow wlbtd sdcard_type:file create_file_perms;
+allow wlbtd sec_debugfs:file rw_file_perms;
+allow wlbtd self:capability sys_resource;
+allow wlbtd self:netlink_generic_socket { read write create getattr bind setopt };
+allow wlbtd self:netlink_socket { read write create getattr bind setopt };
+allow wlbtd storage_file:dir search;
+allow wlbtd storage_file:file r_file_perms;
+allow wlbtd storage_file:lnk_file read;
+allow wlbtd sysfs:file rw_file_perms;
+allow wlbtd sysfs_scsc_log:file rw_file_perms;
+allow wlbtd sysfs_scsc_log:dir r_dir_perms;
+allow wlbtd sysfs_ss_writable:dir search;
+allow wlbtd sysfs_ss_writable:file rw_file_perms;
+allow wlbtd sysfs_wifi:dir r_dir_perms;
+allow wlbtd sysfs_wifi:file rw_file_perms;
+allow wlbtd system_data_file:dir getattr;
+allow wlbtd vendor_convergence_data_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow wlbtd vendor_convergence_data_file:file create_file_perms;
+allow wlbtd vendor_file:file execute_no_trans;
+allow wlbtd vendor_log_file:dir create_dir_perms;
+allow wlbtd vendor_log_file:file create_file_perms;
+allow wlbtd vendor_shell_exec:file execute_no_trans;
+allow wlbtd vendor_toolbox_exec:file rx_file_perms;
+allow wlbtd vendor_wlbtd_debugfs:file { read getattr };
+allow wlbtd vendor_wlbtd_device:chr_file rw_file_perms;
+allow wlbtd wlbtd_exec:file rx_file_perms;
