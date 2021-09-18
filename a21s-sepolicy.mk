@@ -9,6 +9,6 @@ BOARD_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/vendor
 BOARD_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/tracking_denials
 
 # LineageOS
-ifeq ($(BOARD_SEPOLICY_LINEAGE_OS), true)
+ifeq ($(BOARD_SEPOLICY_LINEAGE_OS),true)
 BOARD_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/lineage
 endif
