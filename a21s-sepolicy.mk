@@ -1,6 +1,6 @@
 # System SE Policy
-PRODUCT_PUBLIC_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/public
-PRODUCT_PRIVATE_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/samsung/a21s-sepolicy/public
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/samsung/a21s-sepolicy/private
 
 # Vendor SE Policy
 BOARD_SEPOLICY_DIRS += device/samsung/a21s-sepolicy/vendor
