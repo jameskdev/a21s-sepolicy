@@ -1,3 +1,50 @@
 # radio.te
 
 tzdaemon_use(radio)
+binder_call(radio, gpuservice)
+
+get_prop(radio, rild_prop)
+set_prop(radio, csc_prop)
+set_prop(radio, wifi_prop)
+
+allow radio carrier_file:dir r_dir_perms;
+allow radio carrier_file:file r_file_perms;
+allow radio keydata_data_file:dir r_dir_perms;
+allow radio keydata_data_file:file r_file_perms;
+allow radio keydata_data_file:lnk_file r_file_perms;
+allow radio keyrefuge_data_file:dir r_dir_perms;
+allow radio keyrefuge_data_file:file r_file_perms;
+allow radio keyrefuge_data_file:lnk_file r_file_perms;
+allow radio sysfs_android_usb:dir r_dir_perms;
+allow radio sysfs_android_usb:file r_file_perms;
+allow radio sysfs_android_usb:lnk_file r_file_perms;
+allow radio sysfs_battery:dir r_dir_perms;
+allow radio sysfs_battery:file rw_file_perms;
+allow radio sysfs_camera_writable:dir r_dir_perms;
+allow radio sysfs_camera_writable:file r_file_perms;
+allow radio sysfs_camera_writable:lnk_file r_file_perms;
+allow radio sysfs_lcd_writable:file rw_file_perms;
+allow radio sysfs_lcd_writable:dir r_dir_perms;
+allow radio sysfs_lowmemorykiller:file r_file_perms;
+allow radio sysfs_sec:dir r_dir_perms;
+allow radio sysfs_sec:file rw_file_perms;
+allow radio sysfs_sensor_writable:dir r_dir_perms;
+allow radio sysfs_sensor_writable:file r_file_perms;
+allow radio sysfs_sensor_writable:lnk_file r_file_perms;
+allow radio sysfs_ss_writable:dir r_dir_perms;
+allow radio sysfs_ss_writable:file rw_file_perms;
+allow radio sysfs_ss_writable:lnk_file r_file_perms;
+allow radio system_file:file lock;
+allow radio vendor_radio_data_file:dir create_dir_perms;
+allow radio vendor_radio_data_file:file create_file_perms;
+
+allow radio cpk_efs_file:dir create_dir_perms;
+allow radio cpk_efs_file:file create_file_perms;
+allow radio carrier_efs_file:dir create_dir_perms;
+allow radio carrier_efs_file:file create_file_perms;
+allow radio app_efs_file:dir create_dir_perms;
+allow radio app_efs_file:file create_file_perms;
+allow radio imei_efs_file:dir create_dir_perms;
+allow radio imei_efs_file:file create_file_perms;
+allow radio sec_efs_file:dir create_dir_perms;
+allow radio sec_efs_file:file create_file_perms;
