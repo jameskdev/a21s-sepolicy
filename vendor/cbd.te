@@ -50,8 +50,6 @@ allow cbd mnt_user_file:dir r_dir_perms;
 allow cbd mnt_user_file:lnk_file r_file_perms;
 allow cbd mnt_vendor_file:dir create_dir_perms;
 allow cbd mnt_vendor_file:file create_file_perms;
-allow cbd mobicore_admin_device:chr_file rw_file_perms;
-allow cbd mobicore_user_device:chr_file rw_file_perms;
 allow cbd modem_block_device:blk_file r_file_perms;
 allow cbd nv_core_efs_file:file r_file_perms;
 allow cbd platform_app:dir search;

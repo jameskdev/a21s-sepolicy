@@ -1,7 +1,6 @@
 # untrusted_app_25.te
 
 allow untrusted_app_25 app_data_file:lnk_file unlink;
-allow untrusted_app_25 mobicore_user_device:chr_file rw_file_perms;
 allow untrusted_app_25 msockets_socket:sock_file rw_file_perms;
 allow untrusted_app_25 overlay_service:service_manager find;
 allow untrusted_app_25 rootfs:dir { read open };

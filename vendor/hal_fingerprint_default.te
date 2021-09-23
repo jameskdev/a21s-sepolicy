@@ -13,7 +13,6 @@ allow hal_fingerprint_default goodix_device:chr_file rw_file_perms;
 allow hal_fingerprint_default hal_fingerprint_default:netlink_route_socket { read write create bind };
 allow hal_fingerprint_default hal_fingerprint_default:netlink_socket { read write create bind };
 allow hal_fingerprint_default hal_fingerprint_default_exec:file { read getattr map execute open entrypoint };
-allow hal_fingerprint_default mobicore_user_device:chr_file rw_file_perms;
 allow hal_fingerprint_default sec_debugfs:dir r_dir_perms;
 allow hal_fingerprint_default sec_efs_file:dir create_dir_perms;
 allow hal_fingerprint_default sec_efs_file:file create_file_perms;

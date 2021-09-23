@@ -50,7 +50,6 @@ vendor.security.vaultkeeper.                                   u:object_r:vendor
 vendor.fips.bssl.post                                          u:object_r:vendor_bssl_post_prop:s0
 vendor.proxy_daemon                                            u:object_r:vendor_proxydaemon_prop:s0
 vendor.secureos.                                               u:object_r:vendor_secureos_prop:s0
-vendor.sys.mobicoredaemon.enable                               u:object_r:vendor_mobicoredaemon_prop:s0
 vendor.TEEGRIS.                                                u:object_r:vendor_teegris_prop:s0
 vendor.teegris.                                                u:object_r:vendor_teegris_prop:s0
 vendor.tzdaemon                                                u:object_r:vendor_tzdaemon_prop:s0

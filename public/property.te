@@ -33,7 +33,6 @@ type domain_read_prop, property_type;
 type em_version_prop, property_type;
 type facm_prop, property_type;
 type ina_status_prop, property_type;
-type mobicore_prop, property_type;
 type multisim_prop, property_type;
 type nfc_ese_prop, property_type;
 type product_ship_prop, property_type;

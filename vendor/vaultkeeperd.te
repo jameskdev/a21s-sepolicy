@@ -13,17 +13,13 @@ vndbinder_use(vaultkeeperd)
 get_prop(vaultkeeperd, boot_em_did_prop)
 get_prop(vaultkeeperd, exported_system_prop)
 get_prop(vaultkeeperd, hwservicemanager_prop)
-get_prop(vaultkeeperd, mobicore_prop)
 get_prop(vaultkeeperd, vendor_factory_prop)
-get_prop(vaultkeeperd, vendor_mobicoredaemon_prop)
 get_prop(vaultkeeperd, vendor_tztsdaemon_prop)
 set_prop(vaultkeeperd, vendor_sec_vaultkeeper_prop)
 
 allow vaultkeeperd efs_file:dir { ioctl read write getattr lock open watch watch_reads add_name search };
 allow vaultkeeperd kernel:system syslog_read;
 allow vaultkeeperd kmsg_device:chr_file rw_file_perms;
-allow vaultkeeperd mobicore_admin_device:chr_file rw_file_perms;
-allow vaultkeeperd mobicore_user_device:chr_file rw_file_perms;
 allow vaultkeeperd proc_version:file r_file_perms;
 allow vaultkeeperd sec_poc_file:dir { ioctl read write getattr lock open watch watch_reads add_name search };
 allow vaultkeeperd self:capability { setgid setuid };

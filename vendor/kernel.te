@@ -49,7 +49,6 @@ allow kernel mediaserver:file read;
 allow kernel mnt_user_file:dir r_dir_perms;
 allow kernel mnt_user_file:file r_file_perms;
 allow kernel mnt_user_file:lnk_file r_file_perms;
-allow kernel mobicore_user_device:chr_file { create setattr };
 allow kernel nad_refer_block_device:blk_file rw_file_perms;
 allow kernel netd:file read;
 allow kernel omr_file:file r_file_perms;

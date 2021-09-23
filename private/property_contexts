@@ -173,8 +173,6 @@ wlan.p2p.                                               u:object_r:exported_wifi
 vendor.wifiap.                                          u:object_r:exported_wifi_prop:s0
 facm.                                                   u:object_r:facm_prop:s0
 persist.sys.ina.status                                  u:object_r:ina_status_prop:s0
-vendor.sys.mobicore.                                    u:object_r:mobicore_prop:s0
-sys.mobicoredaemon.                                     u:object_r:mobicore_prop:s0
 ro.multisim.                                            u:object_r:multisim_prop:s0
 nfc.ese.route.blocked                                   u:object_r:nfc_ese_prop:s0
 persist.nfc.                                            u:object_r:nfc_prop:s0

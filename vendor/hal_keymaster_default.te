@@ -3,12 +3,10 @@
 tzdaemon_use(hal_keymaster_default)
 
 get_prop(hal_keymaster_default, compact_dump_prop)
-get_prop(hal_keymaster_default, mobicore_prop)
 get_prop(hal_keymaster_default, vendor_security_patch_level_prop)
 get_prop(hal_keymaster_default, vendor_tztsdaemon_prop)
 set_prop(hal_keymaster_default, ctl_start_prop)
 set_prop(hal_keymaster_default, dumpstate_options_prop)
-set_prop(hal_keymaster_default, vendor_mobicoredaemon_prop)
 
 allow hal_keymaster_default efs_file:dir r_dir_perms;
 allow hal_keymaster_default efs_file:file r_file_perms;
@@ -17,8 +15,6 @@ allow hal_keymaster_default hal_keymaster_default:binder call;
 allow hal_keymaster_default hal_keymaster_default_exec:file { read getattr map execute open entrypoint };
 allow hal_keymaster_default mnt_vendor_file:dir r_dir_perms;
 allow hal_keymaster_default mnt_vendor_file:dir search;
-allow hal_keymaster_default mobicore_file:file r_file_perms;
-allow hal_keymaster_default mobicore_user_device:chr_file rw_file_perms;
 allow hal_keymaster_default persist_file:dir search;
 allow hal_keymaster_default persist_file:file { read getattr open };
 allow hal_keymaster_default prov_efs_file:dir create_dir_perms;

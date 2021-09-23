@@ -19,7 +19,6 @@ allow hal_drm_default hal_omx_server:fd use;
 allow hal_drm_default mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_default mediadrm_vendor_data_file:file create_file_perms;
 allow hal_drm_default mnt_vendor_file:dir { read open search };
-allow hal_drm_default mobicore_user_device:chr_file rw_file_perms;
 allow hal_drm_default persist_file:dir { read open search };
 allow hal_drm_default persist_file:file r_file_perms;
 allow hal_drm_default sec_debugfs:dir r_dir_perms;
