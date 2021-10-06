@@ -1,6 +1,5 @@
 # untrusted_app.te
 
-get_prop(untrusted_app, adbd_prop)
 get_prop(untrusted_app, ap_serial_prop)
 get_prop(untrusted_app, apexd_prop)
 

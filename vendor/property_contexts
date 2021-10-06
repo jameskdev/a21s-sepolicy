@@ -64,11 +64,11 @@ persist.vendor.sys.                                            u:object_r:vendor
 persist.vendor.uwb.log.index                                   u:object_r:vendor_uwb_prop:s0
 persist.vendor.zit.                                            u:object_r:vendor_zygoteinit_prop:s0
 ro.vendor.config.                                              u:object_r:vendor_ro_config_default_prop:s0
-ro.vendor.cscsupported                                         u:object_r:vendor_default_prop:s0
-ro.vendor.ddk.set.afbc                                         u:object_r:vendor_default_prop:s0
+ro.vendor.cscsupported                                         u:object_r:vendor_sec_cdw_prop:s0
+ro.vendor.ddk.set.afbc                                         u:object_r:vendor_sec_cdw_prop:s0
 ro.vendor.model_suffix                                         u:object_r:vendor_model_suffix_prop:s0
 ro.vendor.sys.                                                 u:object_r:vendor_ro_sys_default_prop:s0
-ro.vendor.wfdsupport                                           u:object_r:vendor_default_prop:s0
+ro.vendor.wfdsupport                                           u:object_r:vendor_sec_cdw_prop:s0
 vendor.config.                                                 u:object_r:vendor_config_default_prop:s0
 vendor.seHal.init                                              u:object_r:vendor_sehal_init_prop:s0
 vendor.sys.                                                    u:object_r:vendor_sys_default_prop:s0

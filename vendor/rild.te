@@ -6,10 +6,11 @@ vndbinder_use(rild)
 
 get_prop(rild, product_ship_prop)
 get_prop(rild, sec_timed_prop)
+get_prop(rild, telephony_config_prop)
 get_prop(rild, vendor_model_suffix_prop)
-set_prop(rild, exported_radio_prop)
 set_prop(rild, powerctl_prop)
 set_prop(rild, rild_prop)
+set_prop(rild, telephony_status_prop)
 set_prop(rild, vendor_members_prop)
 set_prop(rild, vendor_rild_prop)
 

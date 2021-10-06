@@ -1,8 +1,8 @@
 # platform_app.te
 
 get_prop(platform_app, ap_serial_prop)
+get_prop(platform_app, audio_config_prop)
 get_prop(platform_app, ccm_prop)
-get_prop(platform_app, exported_audio_prop)
 get_prop(platform_app, sec_audio_prop)
 get_prop(platform_app, sec_camera_prop)
 get_prop(platform_app, vendor_sec_camera_prop)

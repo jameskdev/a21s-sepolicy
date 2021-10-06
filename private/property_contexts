@@ -88,22 +88,16 @@ bugreport.mode                                          u:object_r:dumpstate_opt
 dumpstate.process                                       u:object_r:dumpstate_options_prop:s0
 secmm.vidc.enc.csc.enable                               u:object_r:dynamic_system_prop:s0
 ro.em.version                                           u:object_r:em_version_prop:s0
-ro.config.media_sound                                   u:object_r:exported2_config_prop:s0 exact
-ro.config.ringtone_2                                    u:object_r:exported2_config_prop:s0 exact
-ro.config.notification_sound_2                          u:object_r:exported2_config_prop:s0 exact
-ro.config.pageboost.active_launch.enabled               u:object_r:exported2_config_prop:s0 exact
-ro.config.pageboost.active_launch.timeout               u:object_r:exported2_config_prop:s0 exact
-ro.config.pageboost.mem_prepare.enabled                 u:object_r:exported2_config_prop:s0 exact
-ro.boot.cpboot                                          u:object_r:exported2_default_prop:s0 exact string
-ro.product.system.brand                                 u:object_r:exported2_default_prop:s0 exact string
-ro.build.characteristics                                u:object_r:exported2_default_prop:s0 exact string
-ro.product.build.type                                   u:object_r:exported2_default_prop:s0 exact string
-ro.com.google.gmsversion                                u:object_r:exported3_default_prop:s0
-ro.sf.init.lcd_density                                  u:object_r:exported3_default_prop:s0 exact int
-ro.gfx.driver.1                                         u:object_r:exported3_default_prop:s0 exact string
+ro.config.media_sound                                   u:object_r:systemsound_config_prop:s0 exact
+ro.config.ringtone_2                                    u:object_r:systemsound_config_prop:s0 exact
+ro.config.notification_sound_2                          u:object_r:systemsound_config_prop:s0 exact
+ro.boot.cpboot                                          u:object_r:build_prop:s0 exact string
 ro.config.systemaudiodebug                              u:object_r:exported_config_prop:s0 exact string
-ro.config.pageboost.vramdisk.                           u:object_r:exported_config_prop:s0
+ro.config.pageboost.active_launch.enabled               u:object_r:exported_config_prop:s0 exact
+ro.config.pageboost.active_launch.timeout               u:object_r:exported_config_prop:s0 exact
+ro.config.pageboost.mem_prepare.enabled                 u:object_r:exported_config_prop:s0 exact
 ro.config.pageboost.io_prefetch.                        u:object_r:exported_config_prop:s0
+ro.config.pageboost.vramdisk.                           u:object_r:exported_config_prop:s0
 ro.slmk.                                                u:object_r:exported_config_prop:s0
 config.disable_bluetooth                                u:object_r:exported_config_prop:s0
 ro.config.disable_bluetooth                             u:object_r:exported_config_prop:s0
@@ -112,14 +106,13 @@ ro.hardware.face                                        u:object_r:exported_defa
 ro.hardware.audio.tms                                   u:object_r:exported_default_prop:s0 exact string
 ro.hardware.audio.playback_record                       u:object_r:exported_default_prop:s0 exact string
 ro.hardware.iris                                        u:object_r:exported_default_prop:s0 exact string
-ro.surface_flinger.supports_background_blur             u:object_r:exported_default_prop:s0 exact bool
-ril.NwNmId                                              u:object_r:exported_radio_prop:s0
-ril.NwNmId2                                             u:object_r:exported_radio_prop:s0
-persist.ims.gcfmode                                     u:object_r:exported_radio_prop:s0
-persist.radio.gcfmode                                   u:object_r:exported_radio_prop:s0
-persist.ims.mock.                                       u:object_r:exported_radio_prop:s0
-persist.ims.pctmode                                     u:object_r:exported_radio_prop:s0
-gsm.operator.numeric                                    u:object_r:exported_radio_prop:s0
+ril.NwNmId                                              u:object_r:telephony_status_prop:s0
+ril.NwNmId2                                             u:object_r:telephony_status_prop:s0
+persist.ims.gcfmode                                     u:object_r:telephony_status_prop:s0
+persist.radio.gcfmode                                   u:object_r:telephony_status_prop:s0
+persist.ims.mock.                                       u:object_r:telephony_status_prop:s0
+persist.ims.pctmode                                     u:object_r:telephony_status_prop:s0
+gsm.operator.numeric                                    u:object_r:telephony_status_prop:s0
 storage.support.                                        u:object_r:exported_system_prop:s0
 ro.vzw.                                                 u:object_r:exported_system_prop:s0
 ro.com.google.clientidbase                              u:object_r:exported_system_prop:s0
@@ -167,10 +160,10 @@ persist.sys.gps.dds.subId                               u:object_r:exported_syst
 zeroth.debuglog.logmask                                 u:object_r:exported_system_prop:s0
 knox.kg.                                                u:object_r:exported_system_prop:s0
 dev.sdhms.camera.vtcall                                 u:object_r:exported_system_prop:s0
-wifi.dualconcurrent.interface                           u:object_r:exported_wifi_prop:s0 exact string
-wifi.mhs.wifisharinglite                                u:object_r:exported_wifi_prop:s0 exact string
-wlan.p2p.                                               u:object_r:exported_wifi_prop:s0
-vendor.wifiap.                                          u:object_r:exported_wifi_prop:s0
+wifi.dualconcurrent.interface                           u:object_r:wifi_hal_prop:s0 exact string
+wifi.mhs.wifisharinglite                                u:object_r:wifi_hal_prop:s0 exact string
+wlan.p2p.                                               u:object_r:wifi_hal_prop:s0
+vendor.wifiap.                                          u:object_r:wifi_hal_prop:s0
 facm.                                                   u:object_r:facm_prop:s0
 persist.sys.ina.status                                  u:object_r:ina_status_prop:s0
 ro.multisim.                                            u:object_r:multisim_prop:s0
@@ -227,8 +220,6 @@ sec.factory.facm.                                       u:object_r:sec_factory_f
 persist.timed.enable                                    u:object_r:sec_timed_prop:s0
 selinux.                                                u:object_r:security_prop:s0
 persist.security.mdm.policy                             u:object_r:security_sepolicy_prop:s0
-ro.setupwizard.                                         u:object_r:setupwizard_prop:s0
-setupwizard.                                            u:object_r:setupwizard_prop:s0
 tas.smartamp.disable                                    u:object_r:smartamp_prop:s0
 hwc.exynos.                                             u:object_r:surfaceflinger_display_prop:s0
 ro.product.system.                                      u:object_r:system_product_prop:s0

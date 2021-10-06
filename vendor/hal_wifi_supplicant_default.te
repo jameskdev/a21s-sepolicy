@@ -5,8 +5,8 @@ binder_call(hal_wifi_supplicant_default, wifi_keystore_service_server)
 
 get_prop(hal_wifi_supplicant_default, debug_level_prop)
 get_prop(hal_wifi_supplicant_default, device_logging_prop)
-get_prop(hal_wifi_supplicant_default, exported_wifi_prop)
 get_prop(hal_wifi_supplicant_default, product_ship_prop)
+get_prop(hal_wifi_supplicant_default, wifi_hal_prop)
 
 allow hal_wifi_supplicant_default hal_wifi_supplicant_default_exec:file { read getattr map execute open entrypoint };
 

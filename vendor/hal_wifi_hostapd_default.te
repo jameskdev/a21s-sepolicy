@@ -3,9 +3,9 @@
 allow hal_wifi_hostapd_default hal_wifi_hostapd_default_exec:file { read getattr map execute open entrypoint };
 
 get_prop(hal_wifi_hostapd_default, debug_level_prop)
-get_prop(hal_wifi_hostapd_default, exported_wifi_prop)
 get_prop(hal_wifi_hostapd_default, product_ship_prop)
 get_prop(hal_wifi_hostapd_default, vendor_hostapd_prop)
+get_prop(hal_wifi_hostapd_default, wifi_hal_prop)
 get_prop(hal_wifi_hostapd_default, wifi_log_prop)
 
 allow hal_wifi_hostapd_default hostapd_data_file:dir create_dir_perms;

@@ -5,12 +5,14 @@ get_prop(domain, debug_level_prop)
 get_prop(domain, domain_read_prop)
 get_prop(domain, ina_status_prop)
 get_prop(domain, multisim_prop)
-get_prop(domain, setupwizard_prop)
 get_prop(domain, vendor_camera_prop)
 get_prop(domain, vendor_factory_prop)
 get_prop(domain, vendor_radio_prop)
 get_prop(domain, vendor_securehw_prop)
 get_prop(domain, vendor_securenvm_prop)
+get_prop({domain -coredomain}, vendor_sec_cdw_prop)
+
+neverallow { domain -init -vendor_init } vendor_sec_cdw_prop:property_service set;
 
 allow domain block_device:dir r_dir_perms;
 allow domain debugfs_trace_marker:file getattr;

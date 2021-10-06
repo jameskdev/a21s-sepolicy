@@ -4,8 +4,8 @@ get_prop(hal_dumpstate_default, exported_bluetooth_prop)
 set_prop(hal_dumpstate_default, vendor_dumpstate_config_prop)
 
 allow hal_dumpstate_default { debugfs_type -debugfs -debugfs_kprobes -debugfs_tracing_debug }:dir r_dir_perms;
-allow hal_dumpstate_default { debugfs_type -debugfs -debugfs_kprobes -debugfs_tracing_debug }:file r_file_perms;
-allow hal_dumpstate_default { debugfs_type -debugfs -debugfs_kprobes -debugfs_tracing_debug }:lnk_file r_file_perms;
+allow hal_dumpstate_default { debugfs_type -debugfs -debugfs_kprobes -debugfs_tracing_debug -debugfs_tracing_printk_formats }:file r_file_perms;
+allow hal_dumpstate_default { debugfs_type -debugfs -debugfs_kprobes -debugfs_tracing_debug -debugfs_tracing_printk_formats }:lnk_file r_file_perms;
 allow hal_dumpstate_default debugfs_tracing:dir r_dir_perms;
 allow hal_dumpstate_default debugfs_tracing:file r_file_perms;
 allow hal_dumpstate_default debugfs_tracing:lnk_file r_file_perms;

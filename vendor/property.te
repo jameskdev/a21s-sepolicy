@@ -23,6 +23,7 @@ type vendor_ro_config_default_prop, property_type;
 type vendor_ro_sys_default_prop, property_type;
 type vendor_sec_camera_prop, property_type;
 type vendor_sec_cass_prop, property_type;
+type vendor_sec_cdw_prop, property_type;
 type vendor_sec_vaultkeeper_prop, property_type;
 type vendor_secureos_prop, property_type;
 type vendor_sehal_init_prop, property_type;

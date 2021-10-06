@@ -1,0 +1,3 @@
+# domain.te
+
+get_prop(coredomain, setupwizard_prop)

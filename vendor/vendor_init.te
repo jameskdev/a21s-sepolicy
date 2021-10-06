@@ -4,6 +4,7 @@ set_prop(vendor_init, exported_system_prop)
 set_prop(vendor_init, vendor_radio_prop)
 set_prop(vendor_init, vendor_df_prop)
 set_prop(vendor_init, vendor_rmnet_prop)
+set_prop(vendor_init, vendor_sec_cdw_prop)
 set_prop(vendor_init, vendor_teegris_prop)
 set_prop(vendor_init, vendor_wda_prop)
 

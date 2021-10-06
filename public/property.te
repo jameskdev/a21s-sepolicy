@@ -49,7 +49,6 @@ type sec_factory_facm_prop, property_type;
 type sec_timed_prop, property_type;
 type security_prop, property_type;
 type security_sepolicy_prop, property_type;
-type setupwizard_prop, property_type;
 type smartamp_prop, property_type;
 type system_product_prop, property_type;
 type tzdaemon_prop, property_type;

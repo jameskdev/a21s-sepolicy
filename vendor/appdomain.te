@@ -3,8 +3,8 @@
 get_prop(appdomain, apm_prop)
 get_prop(appdomain, audio_prop)
 get_prop(appdomain, sec_bluetooth_prop)
-get_prop(appdomain, vendor_default_prop)
 get_prop(appdomain, vendor_eden_prop)
+get_prop(appdomain, vendor_sec_cdw_prop)
 
 allow appdomain asec_apk_file:dir r_dir_perms;
 allow appdomain asec_apk_file:file r_file_perms;
