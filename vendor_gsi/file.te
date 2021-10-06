@@ -1,0 +1,6 @@
+# file.te
+
+# Files
+type fsdbg_vendor_exec, file_type, exec_type, vendor_file_type;
+type vendor_abox_log_file, file_type, data_file_type;
+type sysfs_qrandom, fs_type, sysfs_type;

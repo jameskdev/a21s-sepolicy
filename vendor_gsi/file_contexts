@@ -1,0 +1,38 @@
+### file_contexts
+
+### SYSTEM
+/system/bin/bsd                              u:object_r:bsd_exec:s0
+/system/bin/insthk                           u:object_r:insthk_exec:s0
+
+### VENDOR
+/(vendor|system/vendor)/bin/abox_log                                                                        u:object_r:abox_exec:s0
+/(vendor|system/vendor)/bin/cld                                                                             u:object_r:cbd_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.dumpstate@1\.1-service-lazy                               u:object_r:hal_dumpstate_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power\.samsung-service                                    u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/main_abox                                                                       u:object_r:abox_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.biometrics\.face@2\.0-service                     u:object_r:hal_face_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.biometrics\.fingerprint@3\.0-service              u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.hyper-service                                     u:object_r:hal_hyper_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.hqm@1\.0-service                                  u:object_r:hal_hqm_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.light-service                                     u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@2\.0-service                            u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.sysinput@[1-9]\.[0-9]-service                     u:object_r:hal_sec_inputdev_default_exec:s0
+/(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprov@1\.0-service             u:object_r:hal_wvkprov_default_exec:s0
+/(vendor|system/vendor)/bin/moredump                                                                        u:object_r:wlbtd_exec:s0
+/(vendor|system/vendor)/bin/moredump.bin                                                                    u:object_r:wlbtd_exec:s0
+/(vendor|system/vendor)/bin/mx_logger_dump.sh                                                               u:object_r:wlbtd_exec:s0
+/(vendor|system/vendor)/bin/mx_log_collection.sh                                                            u:object_r:wlbtd_exec:s0
+/(vendor|system/vendor)/bin/snap_utility_64                                                                 u:object_r:snap_utility_exec:s0
+/(vendor|system/vendor)/bin/taadaemon                                                                       u:object_r:tzdaemon_exec:s0
+/vendor/bin/fsdbg_vendor                                                                                    u:object_r:fsdbg_vendor_exec:s0
+/vendor/bin/hw/samsung\.hardware\.media\.c2@1\.1-default-service                                            u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.samsung\.hardware\.snap@1\.2-service                                                 u:object_r:snap_hidl_exec:s0
+/vendor/bin/iod                                                                                             u:object_r:vendor_iod_exec:s0
+/vendor/bin/moredump                                                                                        u:object_r:wlbtd_exec:s0
+/vendor/bin/moredump.bin                                                                                    u:object_r:wlbtd_exec:s0
+/vendor/bin/mx_log_collection.sh                                                                            u:object_r:wlbtd_exec:s0
+/vendor/bin/mx_logger_dump.sh                                                                               u:object_r:wlbtd_exec:s0
+/vendor/bin/storkd                                                                                          u:object_r:vendor_storkd_exec:s0
+
+### DATA
+/data/vendor/snap(/.*)?                                          u:object_r:snap_data_vendor_file:s0

@@ -1,0 +1,6 @@
+# hal_hqm.te
+
+binder_call(hal_hqm_client, hal_hqm_server)
+binder_call(hal_hqm_server, hal_hqm_client)
+
+hal_attribute_hwservice(hal_hqm, hal_hqm_hwservice)

@@ -1,0 +1,7 @@
+# hal_sec_inputdev.te
+
+binder_call(hal_sec_inputdev_client, hal_sec_inputdev_server)
+binder_call(hal_sec_inputdev_server, hal_sec_inputdev_client)
+binder_call(hal_sec_inputdev_server, servicemanager)
+
+hal_attribute_hwservice(hal_sec_inputdev, hal_sec_inputdev_hwservice)

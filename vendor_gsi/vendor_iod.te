@@ -1,0 +1,14 @@
+# vendor_iod.te
+
+type vendor_iod, domain;
+type vendor_iod_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_iod)
+
+get_prop(vendor_iod, product_ship_prop)
+
+allow vendor_iod proc_diskstats:file r_file_perms;
+allow vendor_iod proc_iostats:file r_file_perms;
+allow vendor_iod proc_iodevs:file r_file_perms;
+allow vendor_iod sysfs_scsi_host:dir search;
+allow vendor_iod proc_partition:file r_file_perms;

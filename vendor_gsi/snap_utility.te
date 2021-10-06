@@ -1,0 +1,28 @@
+# snap_utility.te
+
+type snap_utility, domain;
+type snap_utility_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(snap_utility)
+
+hal_client_domain(snap_utility, hal_allocator)
+hwbinder_use(snap_utility)
+
+binder_call(snap_utility, snap_hidl)
+
+get_prop(snap_utility, hwservicemanager_prop)
+get_prop(snap_utility, system_boot_reason_prop)
+get_prop(snap_utility, vendor_debug_snap_prop)
+set_prop(snap_utility, cache_status_prop)
+set_prop(snap_utility, log_tag_prop)
+
+allow snap_utility gpu_device:chr_file rw_file_perms;
+allow snap_utility ion_device:chr_file r_file_perms;
+allow snap_utility kgsl_device:chr_file rw_file_perms;
+allow snap_utility snap_data_vendor_file:dir create_dir_perms;
+allow snap_utility snap_data_vendor_file:file create_file_perms;
+allow snap_utility sec_debugfs:dir search;
+allow snap_utility snap_hwservice:hwservice_manager find;
+allow snap_utility traced_producer_socket:sock_file write;
+allow snap_utility vendor_shell_exec:file rx_file_perms;
+allow snap_utility vendor_toolbox_exec:file rx_file_perms;

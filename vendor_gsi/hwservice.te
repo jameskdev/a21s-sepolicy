@@ -1,0 +1,8 @@
+# hwservice.te
+
+type hal_bluetooth_a2dp_hwservice, hwservice_manager_type;
+type hal_hqm_hwservice, hwservice_manager_type;
+type hal_hyper_hwservice, hwservice_manager_type;
+type hal_miscpower_hwservice, hwservice_manager_type;
+type hal_sec_inputdev_hwservice, hwservice_manager_type;
+type snap_hwservice, hwservice_manager_type;

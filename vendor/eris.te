@@ -9,6 +9,7 @@ binder_call(eris, hwservicemanager)
 binder_call(eris, system_suspend_server)
 
 get_prop(eris, hwservicemanager_prop)
+get_prop(eris, product_ship_prop)
 
 allow eris eris_data_file:dir create_dir_perms;
 allow eris eris_data_file:file create_file_perms;

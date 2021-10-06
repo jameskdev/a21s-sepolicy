@@ -1,3 +1,44 @@
 # vendor_shell.te
 
 tzdaemon_use(vendor_shell)
+
+get_prop(vendor_shell, hwservicemanager_prop)
+
+allow vendor_shell vendor_shell_exec:file { read getattr map execute open entrypoint };
+
+allow vendor_shell rootfs:dir r_dir_perms;
+allow vendor_shell tmpfs:dir r_dir_perms;
+allow vendor_shell mnt_vendor_file:dir r_dir_perms;
+
+allow vendor_shell ion_device:chr_file rw_file_perms;
+allow vendor_shell tee_device:chr_file rw_file_perms;
+allow vendor_shell vendor_secmem_device:chr_file rw_file_perms;
+
+allow vendor_shell cpk_efs_file:dir search;
+allow vendor_shell efs_file:dir create_dir_perms;
+allow vendor_shell efs_file:file create_file_perms;
+allow vendor_shell sec_poc_file:dir create_dir_perms;
+allow vendor_shell sec_poc_file:file create_file_perms;
+allow vendor_shell sec_efs_file:dir create_dir_perms;
+allow vendor_shell sec_efs_file:file create_file_perms;
+
+allow vendor_shell sec_debugfs:dir r_dir_perms;
+
+allow vendor_shell sysfs:file { read getattr open };
+allow vendor_shell sysfs_devices_block:dir r_dir_perms;
+allow vendor_shell sysfs_devices_block:file r_file_perms;
+allow vendor_shell sysfs_devices_block:lnk_file r_file_perms;
+allow vendor_shell sysfs_mmc_host:dir r_dir_perms;
+allow vendor_shell sysfs_mmc_host:file r_file_perms;
+allow vendor_shell sysfs_mmc_host:lnk_file r_file_perms;
+allow vendor_shell sysfs_scsi_host:dir r_dir_perms;
+allow vendor_shell sysfs_scsi_host:file r_file_perms;
+allow vendor_shell sysfs_scsi_host:lnk_file r_file_perms;
+allow vendor_shell sysfs_ski_hidden_writable:dir r_dir_perms;
+allow vendor_shell sysfs_ski_hidden_writable:file r_file_perms;
+allow vendor_shell sysfs_ski_hidden_writable:lnk_file r_file_perms;
+
+allow vendor_shell hal_graphics_composer_default:binder call;
+allow vendor_shell hal_wvkprov_default:process sigchld;
+allow vendor_shell hal_wvkprov_default:fd use;
+allow vendor_shell wvkprov_exec:file rx_file_perms;

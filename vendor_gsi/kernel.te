@@ -1,0 +1,4 @@
+# kernel.te
+
+allow kernel insthk_exec:file getattr;
+allow kernel wvkprov_exec:file r_file_perms;

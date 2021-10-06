@@ -3,6 +3,8 @@
 tzdaemon_use(hal_drm_default)
 vndbinder_use(hal_drm_default)
 
+hal_client_domain(hal_drm_default, hal_allocator)
+
 allow hal_drm_default hal_drm_default_exec:file { read getattr map execute open entrypoint };
 
 allow hal_drm_default ap_device:dir search;

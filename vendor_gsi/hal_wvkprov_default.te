@@ -1,0 +1,10 @@
+# hal_wvkprov_default.te
+
+type hal_wvkprov_default, domain;
+type hal_wvkprov_default_exec, exec_type, file_type, vendor_file_type;
+
+hal_server_domain(hal_wvkprov_default, hal_wvkprov)
+
+init_daemon_domain(hal_wvkprov_default)
+
+domain_auto_trans(hal_wvkprov_default, vendor_shell_exec, vendor_shell)

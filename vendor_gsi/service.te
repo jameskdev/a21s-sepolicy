@@ -1,0 +1,4 @@
+# service.te
+
+type hal_hyper_service, vendor_service, service_manager_type;
+type hal_uwb_service, vendor_service, service_manager_type;

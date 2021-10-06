@@ -1,0 +1,5 @@
+# shell.te
+
+binder_call(shell, snap_hidl)
+
+allow shell snap_hwservice:hwservice_manager find;

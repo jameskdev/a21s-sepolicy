@@ -1,0 +1,18 @@
+# insthk.te
+
+type insthk, domain, coredomain;
+type insthk_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(insthk)
+
+set_prop(insthk, wifi_prop)
+
+allow insthk cpk_efs_file:dir create_dir_perms;
+allow insthk cpk_efs_file:file create_file_perms;
+allow insthk drm_efs_file:dir create_dir_perms;
+allow insthk efs_file:dir create_dir_perms;
+allow insthk ion_device:chr_file r_file_perms;
+allow insthk same_process_hal_file:file rx_file_perms;
+allow insthk sec_poc_file:dir create_dir_perms;
+allow insthk self:capability chown;
+allow insthk tz_user_device:chr_file rw_file_perms;

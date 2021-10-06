@@ -1,0 +1,12 @@
+# hal_hyper.te
+
+binder_call(hal_hyper_client, hal_hyper_server)
+binder_call(hal_hyper_server, hal_hyper_client)
+binder_call(hal_hyper_client, servicemanager)
+binder_call(hal_hyper_server, servicemanager)
+
+hal_attribute_hwservice(hal_hyper, hal_hyper_hwservice)
+
+add_service(hal_hyper_server, hal_hyper_service)
+
+allow hal_hyper_client hal_hyper_service:service_manager find;

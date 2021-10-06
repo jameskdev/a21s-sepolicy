@@ -1,0 +1,75 @@
+# hal_hqm_default.te
+
+type hal_hqm_default, domain;
+type hal_hqm_default_exec, exec_type, file_type, vendor_file_type;
+
+hal_server_domain(hal_hqm_default, hal_hqm)
+
+init_daemon_domain(hal_hqm_default)
+
+allow hal_hqm_default app_efs_file:dir r_dir_perms;
+allow hal_hqm_default app_efs_file:file r_file_perms;
+allow hal_hqm_default app_efs_file:lnk_file r_file_perms;
+allow hal_hqm_default sec_debugfs:dir r_dir_perms;
+allow hal_hqm_default sec_debugfs:file r_file_perms;
+allow hal_hqm_default sec_debugfs:lnk_file r_file_perms;
+allow hal_hqm_default sec_efs_file:dir { search };
+allow hal_hqm_default sysfs_battery:dir r_dir_perms;
+allow hal_hqm_default sysfs_battery:file r_file_perms;
+allow hal_hqm_default sysfs_battery:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_hqm_default sysfs_batteryinfo:file rw_file_perms;
+allow hal_hqm_default sysfs_batteryinfo:lnk_file rw_file_perms;
+allow hal_hqm_default sysfs_camera_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_camera_writable:file rw_file_perms;
+allow hal_hqm_default sysfs_camera_writable:lnk_file rw_file_perms;
+allow hal_hqm_default sysfs_devices_block:dir r_dir_perms;
+allow hal_hqm_default sysfs_devices_block:file rw_file_perms;
+allow hal_hqm_default sysfs_fs_f2fs:dir r_dir_perms;
+allow hal_hqm_default sysfs_fs_f2fs:file r_file_perms;
+allow hal_hqm_default sysfs_fs_f2fs:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_lcd_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_lcd_writable:file rw_file_perms;
+allow hal_hqm_default sysfs_lcd_writable:lnk_file rw_file_perms;
+allow hal_hqm_default sysfs_qrandom:dir r_dir_perms;
+allow hal_hqm_default sysfs_qrandom:file r_file_perms;
+allow hal_hqm_default sysfs_qrandom:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_rtc:dir r_dir_perms;
+allow hal_hqm_default sysfs_rtc:file r_file_perms;
+allow hal_hqm_default sysfs_rtc:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_scsi_host:dir r_dir_perms;
+allow hal_hqm_default sysfs_scsi_host:file rw_file_perms;
+allow hal_hqm_default sysfs_scsi_host:lnk_file rw_file_perms;
+allow hal_hqm_default sysfs_sec:dir r_dir_perms;
+allow hal_hqm_default sysfs_sec:file rw_file_perms;
+allow hal_hqm_default sysfs_sensor_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_sensor_writable:file rw_file_perms;
+allow hal_hqm_default sysfs_sensor_writable:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_ski_hwparam_readable:dir r_dir_perms;
+allow hal_hqm_default sysfs_ski_hwparam_readable:file r_file_perms;
+allow hal_hqm_default sysfs_ski_hwparam_readable:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_ski_hwparam_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_ski_hwparam_writable:file rw_file_perms;
+allow hal_hqm_default sysfs_ski_hwparam_writable:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_ski_sensor_readable:file r_file_perms;
+allow hal_hqm_default sysfs_ski_ufs_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_ski_ufs_writable:file r_file_perms;
+allow hal_hqm_default sysfs_ski_ufs_writable:lnk_file r_file_perms;
+allow hal_hqm_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_hqm_default sysfs_ss_writable:file rw_file_perms;
+allow hal_hqm_default sysfs_ss_writable:lnk_file rw_file_perms;
+allow hal_hqm_default sysfs_usb:file rw_file_perms;
+allow hal_hqm_default vendor_sysfs_ap_pmic:file r_file_perms;
+allow hal_hqm_default vendor_sysfs_blksec:dir r_dir_perms;
+allow hal_hqm_default vendor_sysfs_blksec:file rw_file_perms;
+allow hal_hqm_default vendor_sysfs_blksec:lnk_file r_file_perms;
+allow hal_hqm_default vendor_sysfs_cirrus_cal:dir r_dir_perms;
+allow hal_hqm_default vendor_sysfs_cirrus_cal:file r_file_perms;
+allow hal_hqm_default vendor_sysfs_cirrus_cal:lnk_file r_file_perms;
+allow hal_hqm_default vendor_sysfs_dpui:dir r_dir_perms;
+allow hal_hqm_default vendor_sysfs_dpui:file rw_file_perms;
+allow hal_hqm_default vendor_sysfs_dpui:lnk_file r_file_perms;
+allow hal_hqm_default vendor_sysfs_hrm_sensor:file rw_file_perms;
+allow hal_hqm_default vendor_sysfs_mmc:dir r_dir_perms;
+allow hal_hqm_default vendor_sysfs_mmc:file r_file_perms;
+allow hal_hqm_default vendor_sysfs_mmc:lnk_file r_file_perms;

@@ -1,0 +1,6 @@
+# hal_wvkprov.te
+
+binder_call(hal_wvkprov_client, hal_wvkprov_server)
+binder_call(hal_wvkprov_server, hal_wvkprov_client)
+
+hal_attribute_hwservice(hal_wvkprov, hal_wvkprov_hwservice)

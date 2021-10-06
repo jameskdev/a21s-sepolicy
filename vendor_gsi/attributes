@@ -1,0 +1,15 @@
+### attributes
+
+### Samsung Stock HALs
+attribute hal_hyper;
+attribute hal_hyper_client;
+attribute hal_hyper_server;
+attribute hal_hqm;
+attribute hal_hqm_client;
+attribute hal_hqm_server;
+attribute hal_sec_inputdev;
+attribute hal_sec_inputdev_client;
+attribute hal_sec_inputdev_server;
+attribute hal_wvkprov;
+attribute hal_wvkprov_client;
+attribute hal_wvkprov_server;

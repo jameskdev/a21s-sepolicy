@@ -1,0 +1,8 @@
+# system_app.te
+
+binder_call(system_app, snap_hidl)
+
+hal_client_domain(system_app, hal_hyper)
+
+allow system_app insthk_exec:file rx_file_perms;
+allow system_app snap_hwservice:hwservice_manager find;

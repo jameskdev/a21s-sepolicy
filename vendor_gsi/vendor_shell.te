@@ -1,0 +1,5 @@
+# vendor_shell.te
+
+allow vendor_shell hal_wvkprov_default:process sigchld;
+allow vendor_shell hal_wvkprov_default:fd use;
+allow vendor_shell wvkprov_exec:file rx_file_perms;

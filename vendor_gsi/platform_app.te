@@ -1,0 +1,12 @@
+# platform_app.te
+
+binder_call(platform_app, snap_hidl)
+
+allow platform_app snap_hwservice:hwservice_manager find;
+
+allow platform_app snap_data_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow platform_app snap_data_file:file create_file_perms;
+allow platform_app snap_data_vendor_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow platform_app snap_data_vendor_file:file rw_file_perms;
+allow platform_app snap_efs_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow platform_app snap_efs_file:file create_file_perms;

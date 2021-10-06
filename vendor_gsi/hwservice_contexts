@@ -1,0 +1,15 @@
+# hwservice_contexts
+
+vendor.samsung.hardware.audio::ISehDevicesFactory                                               u:object_r:hal_audio_hwservice:s0
+vendor.samsung.hardware.biometrics.face::ISehBiometricsFace                                     u:object_r:hal_face_hwservice:s0
+vendor.samsung.hardware.biometrics.fingerprint::ISehBiometricsFingerprint                       u:object_r:hal_fingerprint_hwservice:s0
+vendor.samsung.hardware.bluetooth::ISehBluetooth                                                u:object_r:hal_bluetooth_hwservice:s0
+vendor.samsung.hardware.bluetooth.a2dp::ISehBluetoothAudioOffload                               u:object_r:hal_bluetooth_a2dp_hwservice:s0
+vendor.samsung.hardware.bluetooth.a2dpsink::ISehBluetoothA2dpSinkProvidersFactory               u:object_r:hal_bluetooth_a2dp_hwservice:s0
+vendor.samsung.hardware.hyper::ISehHyPer                                                        u:object_r:hal_hyper_hwservice:s0
+vendor.samsung.hardware.light::ISehLight                                                        u:object_r:hal_light_hwservice:s0
+vendor.samsung.hardware.miscpower::ISehMiscPower                                                u:object_r:hal_miscpower_hwservice:s0
+vendor.samsung.hardware.hqm::ISehHqm                                                            u:object_r:hal_hqm_hwservice:s0
+vendor.samsung.hardware.secinputdev::ISehInputDevice                                            u:object_r:hal_sec_inputdev_hwservice:s0
+vendor.samsung.hardware.snap::ISehSnap                                                          u:object_r:snap_hwservice:s0
+vendor.samsung.hardware.sysinput::ISehSysInputDev                                               u:object_r:hal_sec_inputdev_hwservice:s0

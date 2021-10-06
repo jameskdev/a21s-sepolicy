@@ -1,0 +1,48 @@
+# snap_hidl.te
+
+type snap_hidl, domain, mlstrustedsubject;
+type snap_hidl_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(snap_hidl)
+
+hwbinder_use(snap_hidl)
+
+get_prop(snap_hidl, hwservicemanager_prop)
+get_prop(snap_hidl, sec_camera_prop)
+get_prop(snap_hidl, vendor_ofi_prop)
+get_prop(snap_hidl, vendor_sec_camera_prop)
+set_prop(snap_hidl, cache_status_prop)
+set_prop(snap_hidl, vendor_debug_snap_prop)
+
+hal_client_domain(snap_hidl, hal_allocator)
+hal_client_domain(snap_hidl, hal_graphics_allocator)
+hal_client_domain(snap_hidl, hal_hyper)
+
+add_hwservice(snap_hidl, snap_hwservice)
+
+allow snap_hidl hidl_allocator_hwservice:hwservice_manager find;
+allow snap_hidl hidl_memory_hwservice:hwservice_manager find;
+
+allow snap_hidl debugfs_tracing:file r_file_perms;
+allow snap_hidl dumpstate:fd use;
+allow snap_hidl fuse:dir create_dir_perms;
+allow snap_hidl fuse:file create_file_perms;
+allow snap_hidl gpu_device:chr_file rw_file_perms;
+allow snap_hidl ion_device:chr_file r_file_perms;
+allow snap_hidl kgsl_device:chr_file rw_file_perms;
+allow snap_hidl mnt_user_file:dir r_dir_perms;
+allow snap_hidl mnt_user_file:file r_file_perms;
+allow snap_hidl mnt_user_file:lnk_file r_file_perms;
+allow snap_hidl platform_app:process getpgid;
+allow snap_hidl sdcardfs:dir r_dir_perms;
+allow snap_hidl sec_debugfs:dir search;
+allow snap_hidl snap_data_vendor_file:dir create_dir_perms;
+allow snap_hidl snap_data_vendor_file:file create_file_perms;
+allow snap_hidl sysfs_npu_version:file r_file_perms;
+allow snap_hidl system_file:dir r_dir_perms;
+allow snap_hidl shell_data_file:file read;
+allow snap_hidl traced_producer_socket:sock_file write;
+allow snap_hidl vendor_shell_exec:file rx_file_perms;
+allow snap_hidl vendor_log_file:file create_file_perms;
+allow snap_hidl vendor_log_file:dir create_dir_perms;
+allow snap_hidl vendor_npu_device:chr_file rw_file_perms;

@@ -1,0 +1,17 @@
+# hal_sec_inputdev_default.te
+
+type hal_sec_inputdev_default, domain;
+type hal_sec_inputdev_default_exec, exec_type, file_type, vendor_file_type;
+
+hal_server_domain(hal_sec_inputdev_default, hal_sec_inputdev)
+
+init_daemon_domain(hal_sec_inputdev_default)
+
+get_prop(hal_sec_inputdev_default, hwservicemanager_prop)
+
+allow hal_sec_inputdev_default sysfs_ss_writable:dir r_dir_perms;
+allow hal_sec_inputdev_default sysfs_ss_writable:file rw_file_perms;
+allow hal_sec_inputdev_default sysfs_sec:dir r_dir_perms;
+allow hal_sec_inputdev_default sysfs_sec:file rw_file_perms;
+allow hal_sec_inputdev_default input_device:dir r_dir_perms;
+allow hal_sec_inputdev_default input_device:chr_file rw_file_perms;

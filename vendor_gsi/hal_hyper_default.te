@@ -1,0 +1,31 @@
+# hal_hyper_default.te
+
+type hal_hyper_default, domain;
+type hal_hyper_default_exec, exec_type, file_type, vendor_file_type;
+
+hal_server_domain(hal_hyper_default, hal_hyper)
+hal_client_domain(hal_hyper_default, hal_power)
+
+init_daemon_domain(hal_hyper_default)
+
+get_prop(hal_hyper_default, product_ship_prop)
+
+allow hal_hyper_default dumpstate:fifo_file write;
+allow hal_hyper_default ems_file:file rw_file_perms;
+allow hal_hyper_default proc_kswapd_perftune_cpumask:file rw_file_perms;
+allow hal_hyper_default shell:fd use;
+allow hal_hyper_default shell:fifo_file write;
+allow hal_hyper_default pcie_sysfs:file rw_file_perms;
+allow hal_hyper_default sysfs_devices_system_cpu:file rw_file_perms;
+allow hal_hyper_default sysfs_devfreq:dir r_dir_perms;
+allow hal_hyper_default sysfs_devfreq:file rw_file_perms;
+allow hal_hyper_default sysfs_gpu:dir r_dir_perms;
+allow hal_hyper_default sysfs_gpu:file rw_file_perms;
+allow hal_hyper_default sysfs_input_booster:file rw_file_perms;
+allow hal_hyper_default sysfs_power:dir r_dir_perms;
+allow hal_hyper_default sysfs_power:file rw_file_perms;
+allow hal_hyper_default sysfs_ski_memory_writable:dir r_dir_perms;
+allow hal_hyper_default sysfs_ski_memory_writable:file rw_file_perms;
+allow hal_hyper_default sysfs_ski_temp_writable:dir r_dir_perms;
+allow hal_hyper_default sysfs_ski_temp_writable:file rw_file_perms;
+allow hal_hyper_default system_app:fifo_file write;

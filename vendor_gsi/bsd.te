@@ -1,0 +1,42 @@
+# bsd.te
+
+type bsd, domain, coredomain;
+type bsd_exec, exec_type, file_type, system_file_type;
+
+init_daemon_domain(bsd)
+
+hal_client_domain(bsd, hal_wvkprov)
+
+get_prop(bsd, vendor_wvkprov_prop)
+set_prop(bsd, ctl_start_prop)
+set_prop(bsd, ctl_stop_prop)
+set_prop(bsd, wifi_prop)
+
+tzdaemon_use(bsd)
+
+allow bsd bsd_socket:dir create_dir_perms;
+allow bsd bsd_socket:sock_file create_file_perms;
+allow bsd cpk_efs_file:dir create_dir_perms;
+allow bsd cpk_efs_file:file create_file_perms;
+allow bsd drm_efs_file:dir create_dir_perms;
+allow bsd dumplog_data_file:dir create_dir_perms;
+allow bsd dumplog_data_file:file create_file_perms;
+allow bsd efs_file:dir create_dir_perms;
+allow bsd efs_file:file create_file_perms;
+allow bsd insthk_exec:file rx_file_perms;
+allow bsd ion_device:chr_file r_file_perms;
+allow bsd ion_device:chr_file rw_file_perms;
+allow bsd prov_efs_file:dir create_dir_perms;
+allow bsd prov_efs_file:file create_file_perms;
+allow bsd same_process_hal_file:file rx_file_perms;
+allow bsd sec_debugfs:dir r_dir_perms;
+allow bsd sec_efs_file:file create_file_perms;
+allow bsd sec_poc_file:dir create_dir_perms;
+allow bsd sec_poc_file:file create_file_perms;
+allow bsd shell_exec:file rx_file_perms;
+allow bsd socket_device:dir create_dir_perms;
+allow bsd sysfs_scsi_host:file r_file_perms;
+allow bsd sysfs_time_in_state:file r_file_perms;
+allow bsd system_file:file execute_no_trans;
+allow bsd toolbox_exec:file rx_file_perms;
+allow bsd vendor_secmem_device:chr_file rw_file_perms;

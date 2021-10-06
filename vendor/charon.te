@@ -1,0 +1,45 @@
+# charon.te
+
+type charon, domain, netdomain, coredomain, tunneldomain;
+type charon_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(charon)
+
+binder_use(charon)
+
+use_keystore(charon)
+
+set_prop(charon, exported_system_prop)
+
+allow charon cgroup:dir create_dir_perms;
+allow charon cgroup:file rw_file_perms;
+allow charon dumplog_data_file:dir create_dir_perms;
+allow charon dumplog_data_file:file create_file_perms;
+allow charon kernel:system module_request;
+allow charon keystore:keystore_key { get sign verify };
+allow charon nativetest_data_file:dir r_dir_perms;
+allow charon net_data_file:dir r_dir_perms;
+allow charon net_data_file:file r_file_perms;
+allow charon proc:dir r_dir_perms;
+allow charon proc_net:dir r_dir_perms;
+allow charon proc_net:file rw_file_perms;
+allow charon self:capability { setuid net_bind_service net_admin };
+allow charon self:udp_socket ioctl;
+allowxperm charon self:udp_socket ioctl { 0x8914 0x8922 };
+allow charon self:netlink_route_socket nlmsg_write;
+allow charon self:netlink_xfrm_socket { create_socket_perms nlmsg_read nlmsg_write };
+allowxperm charon self:netlink_xfrm_socket ioctl { 0x8946 };
+allow charon self:tun_socket { create_socket_perms_no_ioctl relabelto };
+allow charon shell_data_file:dir { read getattr };
+allow charon shell_exec:file { getattr map execute execute_no_trans };
+allow charon system_file:dir r_dir_perms;
+allow charon system_file:file rx_file_perms;
+allow charon tun_device:chr_file rw_file_perms;
+allowxperm charon tun_device:chr_file ioctl { 0x54ca };
+allow charon tunneldomain:tun_socket relabelfrom;
+allow charon vendor_file:dir r_dir_perms;
+allow charon vpn_data_file:dir create_dir_perms;
+allow charon vpn_data_file:fifo_file create_file_perms;
+allow charon vpn_data_file:file create_file_perms;
+allow charon vpn_data_file:lnk_file create_file_perms;
+allow charon vpn_data_file:sock_file create_file_perms;

@@ -1,0 +1,5 @@
+# hal_power_default.te
+
+hal_client_domain(hal_power_default, hal_hyper)
+
+add_hwservice(hal_power_default, hal_miscpower_hwservice)

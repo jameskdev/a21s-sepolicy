@@ -1,0 +1,23 @@
+# abox.te
+
+type abox, domain;
+type abox_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(abox)
+
+allow abox abox_debugfs:dir r_dir_perms;
+allow abox abox_debugfs:file r_file_perms;
+allow abox abox_sysfs:dir { search };
+allow abox abox_sysfs:file rw_file_perms;
+allow abox debugfs:dir r_dir_perms;
+allow abox proc_audio:dir r_dir_perms;
+allow abox proc_audio:file r_file_perms;
+allow abox proc_audio:lnk_file r_file_perms;
+allow abox self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow abox sysfs:file rw_file_perms;
+allow abox vendor_abox_debugfs:file r_file_perms;
+allow abox vendor_abox_log_file:dir { ioctl read write getattr lock open watch watch_reads add_name remove_name search };
+allow abox vendor_abox_log_file:file create_file_perms;
+allow abox vendor_log_file:dir create_dir_perms;
+allow abox vendor_log_file:file create_file_perms;
+allow abox vendor_regmap_debugfs:file r_file_perms;

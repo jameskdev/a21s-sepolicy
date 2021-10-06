@@ -1,0 +1,28 @@
+# wvkprov.te
+
+type wvkprov, domain;
+type wvkprov_exec, exec_type, file_type, vendor_file_type;
+
+get_prop(wvkprov, hwservicemanager_prop)
+
+allow wvkprov hal_wvkprov_default:fd use;
+allow wvkprov hwservicemanager:binder call;
+
+allow wvkprov ion_device:chr_file rw_file_perms;
+allow wvkprov tee_device:chr_file rw_file_perms;
+
+allow wvkprov cpk_efs_file:dir r_dir_perms;
+allow wvkprov cpk_efs_file:file r_file_perms;
+allow wvkprov cpk_efs_file:lnk_file r_file_perms;
+allow wvkprov efs_file:dir create_dir_perms;
+allow wvkprov efs_file:file create_file_perms;
+allow wvkprov sec_poc_file:dir create_dir_perms;
+allow wvkprov sec_poc_file:file create_file_perms;
+
+allow wvkprov sec_debugfs:dir r_dir_perms;
+
+allow wvkprov sysfs_scsi_host:dir r_dir_perms;
+allow wvkprov sysfs_scsi_host:file r_file_perms;
+allow wvkprov sysfs_scsi_host:lnk_file r_file_perms;
+
+allow wvkprov system_file:dir r_dir_perms;

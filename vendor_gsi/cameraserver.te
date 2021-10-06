@@ -1,0 +1,5 @@
+# cameraserver.te
+
+binder_call(cameraserver, snap_hidl)
+
+allow cameraserver snap_hwservice:hwservice_manager find;

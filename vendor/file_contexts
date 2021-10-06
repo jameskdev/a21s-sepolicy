@@ -1,6 +1,7 @@
 ### file_contexts
 
 ### SYSTEM
+/system/bin/charon                           u:object_r:charon_exec:s0
 /system/bin/eris                             u:object_r:eris_exec:s0
 
 ### VENDOR
@@ -594,6 +595,7 @@
 
 ### CSC
 /prism(/.*)?                    u:object_r:system_file:s0
+/prism/etc(/.*)?                u:object_r:vendor_configs_file:s0
 /prism/etc/carriers(/.*)?       u:object_r:vendor_configs_file:s0
 
 ### SEC_EFS

@@ -1,0 +1,9 @@
+# system_server.te
+
+hal_client_domain(system_server, hal_hqm)
+hal_client_domain(system_server, hal_hyper)
+hal_client_domain(system_server, hal_sec_inputdev)
+
+allow system_server bsd_socket:dir search;
+allow system_server bsd_socket:sock_file { write lock append map open };
+allow system_server hal_miscpower_hwservice:hwservice_manager find;

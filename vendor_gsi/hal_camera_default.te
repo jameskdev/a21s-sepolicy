@@ -1,0 +1,3 @@
+# hal_camera_default.te
+
+hal_client_domain(hal_camera_default, hal_hyper)
